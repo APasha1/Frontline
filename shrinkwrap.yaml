@@ -1,7 +1,10 @@
 dependencies:
   body-parser: 1.19.0
   discord.js: 11.5.1
+  enmap: 5.2.4
   express: 4.17.1
+  moment: 2.24.0
+  moment-duration-format: 2.3.2
   noblox-private: 4.2.6
   request: 2.88.0
 packages:
@@ -278,6 +281,14 @@ packages:
       node: '>= 0.8'
     resolution:
       integrity: sha1-rT/0yG7C0CkyL1oCw6mmBslbP1k=
+  /enmap/5.2.4:
+    dependencies:
+      lodash: 4.17.15
+    dev: false
+    peerDependencies:
+      better-sqlite3: ^5.4.1
+    resolution:
+      integrity: sha512-YulKPmB3t08i1aBDBDgEew9gAWYWXVuGe8S3DLYRQ+E0FoVxTTzo2iSfcEmUX9DRLuKLDMRLRcbRqX5J0z55Uw==
   /entities/1.1.2:
     dev: false
     resolution:
@@ -609,6 +620,14 @@ packages:
     hasBin: true
     resolution:
       integrity: sha512-x0Vn8spI+wuJ1O6S7gnbaQg8Pxh4NNHb7KSINmEWKiPE4RKOplvijn+NkmYmmRgP68mc70j2EbeTFRsrswaQeg==
+  /moment-duration-format/2.3.2:
+    dev: false
+    resolution:
+      integrity: sha512-cBMXjSW+fjOb4tyaVHuaVE/A5TqkukDWiOfxxAjY+PEqmmBQlLwn+8OzwPiG3brouXKY5Un4pBjAeB6UToXHaQ==
+  /moment/2.24.0:
+    dev: false
+    resolution:
+      integrity: sha512-bV7f+6l2QigeBBZSM/6yTNq4P2fNpSWj/0e7jQcy87A8e7o2nAfP/34/2ky5Vw4B9S446EtIhodAzkFCcR4dQg==
   /ms/2.0.0:
     dev: false
     resolution:
@@ -1028,6 +1047,9 @@ shrinkwrapVersion: 3
 specifiers:
   body-parser: ^1.19.0
   discord.js: ^11.5.1
+  enmap: ^5.2.4
   express: ^4.17.1
+  moment: ^2.24.0
+  moment-duration-format: ^2.2.2
   noblox-private: ^4.2.4
   request: ^2.88.0
