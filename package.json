@@ -21,7 +21,7 @@
     "noblox.js": "^4.3.0"
   },
   "engines": {
-    "node": "8.x"
+    "node": "10.15.3"
   },
   "repository": {
     "url": "https://glitch.com/edit/#!/hello-express"
