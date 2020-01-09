@@ -6,6 +6,7 @@ dependencies:
   moment: 2.24.0
   moment-duration-format: 2.3.2
   noblox-private: 4.2.6
+  noblox.js: 4.3.0
   request: 2.88.0
 packages:
   /@types/node/13.1.6:
@@ -661,6 +662,17 @@ packages:
     dev: false
     resolution:
       integrity: sha512-cR99FwfZyKY2l9/aUaPGQKyyg/v1KvBlgCwBKlvgjJu+ACnvNdURj1Wou4ok7yKdqTXgudm2wgKMpTX8TLHj8A==
+  /noblox.js/4.3.0:
+    dependencies:
+      bluebird: 3.7.2
+      cheerio: 1.0.0-rc.3
+      entities: 2.0.0
+      request: 2.88.0
+      request-promise: /request-promise/4.2.5/request@2.88.0
+      signalr-client: 0.0.19
+    dev: false
+    resolution:
+      integrity: sha512-TiM9nDki7Hn0XmEehnDaBpSlPKRj0vcd9nMC9ReVR1jyO9CRbxXucwcq//kvaEOHjkRk7+AALpHIJBBXQOYl1Q==
   /nth-check/1.0.2:
     dependencies:
       boolbase: 1.0.0
@@ -872,6 +884,12 @@ packages:
     dev: false
     resolution:
       integrity: sha1-pSF383ziSOzIcibdEDxB/3DIKbE=
+  /signalr-client/0.0.19:
+    dependencies:
+      websocket: 1.0.31
+    dev: false
+    resolution:
+      integrity: sha512-OXHcjsTkgZkiM+0NInTvkulfdd+FEHe2EdAjl8TvPJ6uXclLE7FTxe1AcLNVIuUdAgaAMpQlG2P9sZ+hVElWog==
   /snekfetch/3.6.4:
     deprecated: use node-fetch instead
     dev: false
@@ -1052,4 +1070,5 @@ specifiers:
   moment: ^2.24.0
   moment-duration-format: ^2.2.2
   noblox-private: ^4.2.4
+  noblox.js: ^4.3.0
   request: ^2.88.0

@@ -4,6 +4,7 @@ var botConfig = {
     
     logRanks: "true" means the bot will attempt to log its rankups, "false" means it won't.
     logChannel: the channel ID of the channel the bot will log to if logRanks is "true"
+    httpAuth: **IMPORTANT** please set this to some key nobody else can find
     groupRankBinds: a list of group binds. the format is:
     
     [GAMEPASS_ID, ROBLOX GROUP ROLE NAME]
@@ -11,6 +12,7 @@ var botConfig = {
   
   logRanks: false,
   logChannel: "",
+  httpAuth: "2iC9mVseo@N%@J1iq#FGG3",
   groupRankBinds: [
     // [1111, Trainee]
     [7964756, "[A] Agent"],
@@ -30,7 +32,7 @@ var botConfig = {
 
 
 /*
-  DON'T MESS WITH THIS UNLESS YOU KNOW WHAT YOU'RE DOING
+  DON'T MESS WITH BELOW UNLESS YOU KNOW WHAT YOU'RE DOING
 */
 
 var perms = {
@@ -62,12 +64,12 @@ var ranks = {
 }
 
 var config = {
-  prefix: "r!",
-  ownerId: "240639333567168512",
-  masterServer: "501860458626547721",
+  prefix: "megu!",
+  ownerId: "240639333567168512", // feel free to replace with your own id
+  masterServer: "",
   
   embedColors: {
-    default: "#f97575",
+    default: "#00ccff",
     good: "GREEN",
     moderate: "ORANGE",
     notice: [255, 255, 0],
@@ -93,7 +95,8 @@ var config = {
   getRole: (role) => {
     return ranks[role]
   },
-  ranks: ranks
+  ranks: ranks,
+  groupBindConfig: botConfig
 }
 
 

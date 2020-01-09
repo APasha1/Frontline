@@ -12,6 +12,7 @@ const enmap = require("enmap");
 const request = require("request");
 const config = require("./config.js"); // Bot Config
 const moment = require("moment");
+const noblox = require("noblox.js")
 require("moment-duration-format");
 
 // File System
@@ -29,15 +30,25 @@ client.commands = new enmap();
 client.aliases = new enmap();
 client.config = config;
 
+// Modules
+require("./modules/commandsHandler.js")(client); // Commands modules
+require("./modules/functions.js")(client); // Useful functions
+
 
 // App
 app.use(bodyparser.json());
 app.set("env", "production");
 app.use(bodyparser.urlencoded({ extended: true }));
 
-app.get("/api/rankuser", function(request, response) {
+app.get("/api/rankuser", function(req, res) {
   console.log("bopped")
-  response.sendStatus(200)
+  let body = req.body
+  if (!body) {
+    return res.status(400).send("Malformed request")
+  }
+  if (body.key !== config.httpAuth) {
+    return res.status(403).send("FORBIDDEN")
+  }
 });
 
 // Set the auto-pinger
@@ -144,3 +155,5 @@ client.on("message", async message => {
     // Handle messages that aren't commands
   }
 });
+
+startup()
