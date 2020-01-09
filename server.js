@@ -81,15 +81,19 @@ const startup = async () => {
     if (response) console.log(response);
   });
   
-  client.login(process.env.BOT_TOKEN).then(token => {
+  client.login(process.env.BOT_TOKEN).then(async token => {
     console.log("Logged into Discord!");
   })
+  
+  
 }
 
 
 // Discord bot events
 client.on("ready", async () => {
-  client.user.setActivity("ROBLOX! [" + config.prefix + "]");
+  await noblox.cookieLogin(process.env.COOKIE)
+  let user = noblox.getCurrentUser()
+  client.user.setActivity("ROBLOX! [" + config.prefix + "] - " + user.UserName);
 });
 
 client.on("message", async message => {
