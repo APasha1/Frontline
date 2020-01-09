@@ -1,4 +1,20 @@
-
+var botConfig = {
+  /*
+    If you don't know how to grab an ID, please google it.
+    
+    logRanks: "true" means the bot will attempt to log its rankups, "false" means it won't.
+    logChannel: the channel ID of the channel the bot will log to if logRanks is "true"
+    groupRankBinds: a list of group binds. the format is:
+    
+    [GAMEPASS_ID, DISCORD ROLE ID, ROBLOX GROUP ROLE NAME]
+  */
+  
+  logRanks: false,
+  logChannel: "",
+  groupRankBinds: {
+    
+  }
+}
 
 
 
@@ -46,6 +62,27 @@ var config = {
     notice: [255, 255, 0],
     bad: "RED"
   },
+  
+  
+  getPermLevel: (user) => {
+    let highest = 0
+    let roleRank = 1
+    let roleName = "User"
+    for (let x in perms) {
+      let func = perms[x]
+      let info = func(user)
+      if (info[0] && info[1] > highest) {
+        highest = info[1]
+        roleRank = info[1]
+        roleName = info[2]
+      }
+    }
+    return {roleRank, roleName}
+  },
+  getRole: (role) => {
+    return ranks[role]
+  },
+  ranks: ranks
 }
 
 
