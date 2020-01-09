@@ -6,15 +6,25 @@ var botConfig = {
     logChannel: the channel ID of the channel the bot will log to if logRanks is "true"
     groupRankBinds: a list of group binds. the format is:
     
-    [GAMEPASS_ID, DISCORD ROLE ID, ROBLOX GROUP ROLE NAME]
+    [GAMEPASS_ID, ROBLOX GROUP ROLE NAME]
   */
   
   logRanks: false,
   logChannel: "",
-  groupRankBinds: {
-    // [1111, <some_role_id>, Trainee]
-    []
-  }
+  groupRankBinds: [
+    // [1111, Trainee]
+    [7964756, "[A] Agent"],
+    [7964757, "[IO] Intelligence Agent"],
+    [7964759, "[BSA] Base Security Agent"],
+    [7964788, "[TO] Tactical Operations"],
+    [7964769, "[AO] Analytics Operative"],
+    [7964771, "[I] Instructors"],
+    [7964775, "[OS] Operations Supervisors"],
+    [7964776, "[OC] Operations Chiefs"],
+    [7964780, "[COS] Chief Of Staff"],
+    [7964782, "[BRD] Board"],
+    [7964783, "[CRP] Chairperson"],
+  ]
 }
 
 
