@@ -12,7 +12,8 @@ var botConfig = {
   logRanks: false,
   logChannel: "",
   groupRankBinds: {
-    
+    // [1111, <some_role_id>, Trainee]
+    []
   }
 }
 
