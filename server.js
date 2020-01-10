@@ -169,4 +169,6 @@ client.on("message", async message => {
   }
 });
 
-startup()
+if (process.env.BOT_TOKEN != "") {
+  startup()
+}

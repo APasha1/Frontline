@@ -13,7 +13,7 @@ var botConfig = {
   groupId: 4460035,
   logRanks: false,
   logChannel: "",
-  httpAuth: "2iC9mVseo@N%@J1iq#FGG3",
+  httpAuth: "",
   groupRankBinds: [
     // [1111, Trainee]
     [7964756, "[A] Agent"],
