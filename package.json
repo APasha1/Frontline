@@ -18,7 +18,8 @@
     "moment": "^2.24.0",
     "moment-duration-format": "^2.2.2",
     "enmap": "^5.2.4",
-    "noblox.js": "^4.3.0"
+    "noblox.js": "^4.3.0",
+    "snekfetch": "^4.0.4"
   },
   "engines": {
     "node": "10.15.3"

@@ -10,6 +10,7 @@ var botConfig = {
     [GAMEPASS_ID, ROBLOX GROUP ROLE NAME]
   */
   
+  groupId: 4460035,
   logRanks: false,
   logChannel: "",
   httpAuth: "2iC9mVseo@N%@J1iq#FGG3",

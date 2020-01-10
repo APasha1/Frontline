@@ -49,6 +49,14 @@ app.get("/api/rankuser", function(req, res) {
   if (body.key !== config.httpAuth) {
     return res.status(403).send("FORBIDDEN")
   }
+  
+  let userId = body.userId
+  let ranks = body.ranks
+  if (!userId) {
+    return res.status(400).send("Malformed request")
+  }
+  
+  
 });
 
 // Set the auto-pinger

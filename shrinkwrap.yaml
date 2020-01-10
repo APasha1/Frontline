@@ -8,6 +8,7 @@ dependencies:
   noblox-private: 4.2.6
   noblox.js: 4.3.0
   request: 2.88.0
+  snekfetch: 4.0.4
 packages:
   /@types/node/13.1.6:
     dev: false
@@ -895,6 +896,11 @@ packages:
     dev: false
     resolution:
       integrity: sha512-NjxjITIj04Ffqid5lqr7XdgwM7X61c/Dns073Ly170bPQHLm6jkmelye/eglS++1nfTWktpP6Y2bFXjdPlQqdw==
+  /snekfetch/4.0.4:
+    deprecated: use node-fetch instead
+    dev: false
+    resolution:
+      integrity: sha512-dyycG9fvwtSJqKPfMVOpXt+60qvMGe7vWLwOJDiSJaiAx+hs2EnFChG2bXCWn7ulz+zGzrHdN9/yeEb0YqEPww==
   /sshpk/1.16.1:
     dependencies:
       asn1: 0.2.4
@@ -1072,3 +1078,4 @@ specifiers:
   noblox-private: ^4.2.4
   noblox.js: ^4.3.0
   request: ^2.88.0
+  snekfetch: ^4.0.4
