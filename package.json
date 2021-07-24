@@ -19,7 +19,9 @@
     "moment-duration-format": "^2.2.2",
     "enmap": "^5.2.4",
     "noblox.js": "^4.3.0",
-    "snekfetch": "^4.0.4"
+    "snekfetch": "^4.0.4",
+    "async-redis": "^2.0.0",
+    "redis": "^3.1.2"
   },
   "engines": {
     "node": "^12"

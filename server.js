@@ -2,6 +2,9 @@
   DON'T MESS WITH THIS UNLESS YOU KNOW WHAT YOU'RE DOING
 */
 
+// Data
+const redis = require("redis");
+const asyncredis = require("async-redis");
 
 const express = require("express");
 const discord = require("discord.js");
