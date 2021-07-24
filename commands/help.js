@@ -25,7 +25,7 @@ exports.run = async (client, message, args, level) => { // eslint-disable-line n
       addCommandToList(cmd)
     }
 
-    const embed = new discord.RichEmbed()
+    const embed = new discord.MessageEmbed()
     embed.setTitle("Command List")
     embed.setColor(client.config.embedColors.default)
 

@@ -42,7 +42,7 @@ var perms = {
     return [true, 1, "User"]
   },
   Staff: (user) => {
-    return [user.roles.find(x => x.name.toLowerCase() == 'staff'), 10, "Staff"]
+    return [user.roles.cache.find(x => x.name.toLowerCase() == 'staff'), 10, "Staff"]
   },
   Owner: (user) => {
     return (user.guild.owner.id == user.id, 20, "Owner")

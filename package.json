@@ -22,7 +22,7 @@
     "snekfetch": "^4.0.4"
   },
   "engines": {
-    "node": "10.15.3"
+    "node": "^12"
   },
   "repository": {
     "url": "https://glitch.com/edit/#!/hello-express"
