@@ -78,6 +78,16 @@ module.exports = (client) => {
     }
   };
   
+  client.getData = async (key) => {
+    let data = await client.redisClient.get(key)
+    return JSON.parse(data)
+  }
+
+  client.setData = async (key, val, toSet) => {
+    let data = await client.redisClient.set(key, val)
+    return data 
+  }
+  
   client.wait = require("util").promisify(setTimeout);
   
   // These 2 process methods will catch exceptions and give more details about the error and stack trace.

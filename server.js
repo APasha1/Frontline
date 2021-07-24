@@ -32,6 +32,8 @@ const client = new discord.Client();
 client.commands = new enmap();
 client.aliases = new enmap();
 client.config = config;
+client.redisClient = redis.createClient({url: process.env.REDIS_URL, password: process.env.REDIS_PASS})
+asyncredis.decorate(client.redisClient)
 
 // Modules
 require("./modules/commandsHandler.js")(client); // Commands modules
@@ -148,5 +150,5 @@ client.on("message", async message => {
 });
 
 if (process.env.BOT_TOKEN != "") {
-  //startup()
+  ///startup()
 }
