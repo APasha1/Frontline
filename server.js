@@ -145,5 +145,5 @@ client.on("message", async message => {
 });
 
 if (process.env.BOT_TOKEN != "") {
-  startup()
+  //startup()
 }

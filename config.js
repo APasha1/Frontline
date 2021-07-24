@@ -77,6 +77,13 @@ var config = {
     bad: "RED"
   },
   
+  emotes: {
+    accept: "<a:accepted:868335596165271603>",
+    deny: "<a:denied:868335596299497483>",
+    maybe: "<a:maybe:868335596567928842>",
+    loading: "<a:loading:868335596362399784>",
+  },
+  
   
   getPermLevel: (user) => {
     let highest = 0
