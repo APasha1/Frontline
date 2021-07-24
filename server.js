@@ -40,24 +40,6 @@ app.use(bodyparser.json());
 app.set("env", "production");
 app.use(bodyparser.urlencoded({ extended: true }));
 
-app.get("/api/rankuser", function(req, res) {
-  console.log("bopped")
-  let body = req.body
-  if (!body) {
-    return res.status(400).send("Malformed request")
-  }
-  if (body.key !== config.httpAuth) {
-    return res.status(403).send("FORBIDDEN")
-  }
-  
-  let userId = body.userId
-  let ranks = body.ranks
-  if (!userId) {
-    return res.status(400).send("Malformed request")
-  }
-  
-  
-});
 
 // Set the auto-pinger
 app.get("/", function(err, res) {
@@ -68,10 +50,6 @@ app.get("/ping", function(err, res) {
   res.sendStatus(200);
   // vibe check
 });
-
-setInterval(() => {
-  request.get("https://roblox-rank-bot-template.glitch.me/");
-}, 150000);
 
 const listener = app.listen(process.env.PORT, function() {
   console.log("Bot is listening on port " + listener.address().port);
@@ -99,10 +77,7 @@ const startup = async () => {
 
 // Discord bot events
 client.on("ready", async () => {
-  /* await noblox.cookieLogin(process.env.COOKIE)
-  let user = noblox.getCurrentUser()
-  console.log("Successfully logged into roblox as " + JSON.stringify(user, null, 2))
-  client.user.setActivity("ROBLOX! [" + config.prefix + "] - " + user.UserName); */
+
 });
 
 client.on("message", async message => {

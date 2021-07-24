@@ -23,7 +23,7 @@ exports.run = async (client, message, args, level) => { // eslint-disable-line n
     output = output.replace(filter, "[TOKEN]");
     output = clean(output);
     if (output.length < 1750) {
-      var embed = new discord.RichEmbed()
+      var embed = new discord.MessageEmbed()
       embed.setTitle("Code evaluated!")
       embed.setDescription(`\`\`\`js\n${output}\n\`\`\``);
       embed.setColor('GREEN')
@@ -33,7 +33,7 @@ exports.run = async (client, message, args, level) => { // eslint-disable-line n
     } else {
       try {
         const { body } = await post("https://www.hastebin.com/documents").send(output);
-        var embed = new discord.RichEmbed()
+        var embed = new discord.MessageEmbed()
         embed.setTitle("That's a large evaluation..")
         embed.setDescription(`The output was so long, it was uploaded to hastebin! https://www.hastebin.com/${body.key}.js`);
         embed.setColor(client.config.embedColors.good)
@@ -46,7 +46,7 @@ exports.run = async (client, message, args, level) => { // eslint-disable-line n
     }
   } catch (error) {
     if (error.stack.toString().length < 1750) {
-      var embed = new discord.RichEmbed()
+      var embed = new discord.MessageEmbed()
       embed.setTitle("Fat error!")
       embed.setDescription(`The following error occured \`\`\`js\n${error.stack}\`\`\``);
       embed.setColor('RED')
@@ -55,7 +55,7 @@ exports.run = async (client, message, args, level) => { // eslint-disable-line n
       message.channel.send({embed})
     } else {
       const { body } = await post("https://www.hastebin.com/documents").send(error.stack.toString());
-      var embed = new discord.RichEmbed()
+      var embed = new discord.MessageEmbed()
       embed.setTitle("Big error energy!")
       embed.setDescription(`The output was so long, it was uploaded to hastebin! https://www.hastebin.com/${body.key}.js`);
       embed.setColor('RED')

@@ -65,7 +65,7 @@ var ranks = {
 }
 
 var config = {
-  prefix: "megu!",
+  prefix: "o!",
   ownerId: "240639333567168512", // feel free to replace with your own id
   masterServer: "",
   
