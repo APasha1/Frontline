@@ -79,13 +79,12 @@ module.exports = (client) => {
   };
   
   client.getData = async (key) => {
-    let err, data = await client.redisClient.get(key)
-    console.log(err, data)
+    let data = await client.redisClient.get(key)
     return data
   }
 
   client.setData = async (key, val, toSet) => {
-    let err, data = await client.redisClient.set(key, val)
+    let data = await client.redisClient.set(key, val)
     return data 
   }
   

@@ -16,7 +16,7 @@ function genID() {
 exports.run = async (client, message, args, level) => { // eslint-disable-line no-unused-vars
   let memberToBindTo = message.mentions.members.first()
   if (!memberToBindTo) return message.channel.send("Please provide a user to generate a key for.")
-  message.channel.send("Alright, generated a key for " + memberToBindTo.user.discriminator + ".\nThis will allow them to use Autoranking for **one** group.")
+  message.channel.send(client.config.emotes.accept + " Alright, generated a key for **" + memberToBindTo.user.tag + "**.\nThis will allow them to use Autoranking for **one** group.")
 };
 
 exports.conf = {

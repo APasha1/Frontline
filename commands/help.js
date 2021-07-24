@@ -42,7 +42,7 @@ exports.run = async (client, message, args, level) => { // eslint-disable-line n
       let cmdHelp = cmd.help
       let aliases = cmd.conf.aliases.join(", ")
       
-      const embed = new discord.RichEmbed()
+      const embed = new discord.MessageEmbed()
       embed.setTitle(`Command - ${cmdHelp.name}`)
       embed.setDescription(`\`${cmdHelp.name}\` - ${cmdHelp.description}`)
       embed.setColor(client.config.embedColors.default)
