@@ -99,10 +99,10 @@ const startup = async () => {
 
 // Discord bot events
 client.on("ready", async () => {
-  await noblox.cookieLogin(process.env.COOKIE)
+  /* await noblox.cookieLogin(process.env.COOKIE)
   let user = noblox.getCurrentUser()
   console.log("Successfully logged into roblox as " + JSON.stringify(user, null, 2))
-  client.user.setActivity("ROBLOX! [" + config.prefix + "] - " + user.UserName);
+  client.user.setActivity("ROBLOX! [" + config.prefix + "] - " + user.UserName); */
 });
 
 client.on("message", async message => {
