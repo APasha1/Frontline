@@ -6,6 +6,7 @@ dependencies:
   express: 4.17.1
   moment: 2.29.1
   moment-duration-format: 2.3.2
+  noblox: 4.8.5
   noblox-private: 4.2.6
   noblox.js: 4.8.6
   redis: 3.1.2
@@ -952,6 +953,21 @@ packages:
     dev: false
     resolution:
       integrity: sha512-6Kzjp6b+2zuUHtGz8ECEj4grUs9u41FLVOTsLyZqoxedUSP7vqmpsJuz5WTZM04iScvW6rZix3y3UKb24LhBbA==
+  /noblox/4.8.5:
+    dependencies:
+      bluebird: 3.7.2
+      chalk: 4.1.1
+      cheerio: 1.0.0-rc.10
+      entities: 2.2.0
+      figlet: 1.5.0
+      request: 2.88.2
+      request-promise: /request-promise/4.2.6/request@2.88.2
+      signalr-client: 0.0.20
+    deprecated: 'Use package noblox.js, not noblox. That package is most up to date.'
+    dev: false
+    requiresBuild: true
+    resolution:
+      integrity: sha512-jEy++XegC/bewDw41RdLR23nN5OnEuIC4gzzfSrDn5B0St8VXoHgM329P1LJGzv58gGuFR8ipj5H+H0g60QY7Q==
   /node-abi/2.30.0:
     dependencies:
       semver: 5.7.1
@@ -1642,6 +1658,7 @@ specifiers:
   express: ^4.17.1
   moment: ^2.24.0
   moment-duration-format: ^2.2.2
+  noblox: ^4.8.5
   noblox-private: ^4.2.4
   noblox.js: ^4.3.0
   redis: ^3.1.2
