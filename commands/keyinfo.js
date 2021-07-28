@@ -19,14 +19,21 @@ exports.run = async (client, message, args, level) => { // eslint-disable-line n
     if (keyData.user && keyData.user == member.id) {
       let whitelisted = Object.keys(keyData.allowedIds)
       let names = []
-      for (let id in whitelisted) {
+      for (let ind in whitelisted) {
+        let id = whitelisted[ind]
         try {
-          
+          let groupInfo = await roblox.getGroup(Number(id))
+          names.push(`\`Group - ${groupInfo.name} (ID ${id})\``)
         } catch {
-          names.push("INVALID_ID")
+          try {
+            let userInfo = await roblox.getPlayerInfo(Number(id))
+            names.push(`\`User - ${userInfo.username} (ID ${id})\``)
+          } catch {
+            names.push(`**INVALID_ID - (ID ${id})**`)
+          }
         }
       }
-      keyInfo[key] = whitelisted.length > 0 ? `Whitelisted for ID **${whitelisted}**` : "Nobody has been whitelisted yet for this key."
+      keyInfo[key] = whitelisted.length > 0 ? `Whitelisted for **${names.join(", ")}**` : "Nobody has been whitelisted yet for this key."
     }
   }
   
