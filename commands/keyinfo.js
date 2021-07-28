@@ -5,14 +5,13 @@ exports.run = async (client, message, args, level) => { // eslint-disable-line n
   if (!member) return message.channel.send("Please provide a user to view keys for.")
   
   let keyInfo = {}
-  let allKeys = client.redisClient.keys("*") // retrieves all keys from db in an array
+  let allKeys = await client.redisClient.keys("*") // retrieves all keys from db in an array
   // this is an O(N) operation. will be somewhat expensive as db grows
   for (let index in allKeys) {
     let key = allKeys[index]
     let keyData = await client.getData(key)
     if (keyData.user && keyData.user == member.id) {
       let whitelisted = Object.keys(keyData.allowedIds)
-      whitelisted = whitelisted.length > 0 ? whitelisted : "None"
       keyInfo[key] = whitelisted.length > 0 ? `Whitelisted for **${whitelisted}**` : "Nobody has been whitelisted yet for this key."
     }
   }

@@ -2,7 +2,7 @@ const discord = require("discord.js");
 
 exports.run = async (client, message, args, level) => { // eslint-disable-line no-unused-vars
   let data = await client.getData(args[0])
-  message.channel.send(data)
+  message.channel.send(JSON.stringify(data, null, 2))
 };
 
 exports.conf = {
