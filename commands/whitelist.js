@@ -15,10 +15,13 @@ exports.run = async (client, message, args, level) => { // eslint-disable-line n
         if (count > 0) return message.channel.send(client.config.emotes.deny + " Sorry, you have already hit the maximum amount of whitelisted IDs for this key.")
         roblox.getGroup({userId: targetId}).then(result => {
           message.channel.send(`${client.config.emotes.accept} Alright, I've added ${result.name} to your whitelist. Any game under this group will be whitelisted.`)
-          keyData[2]
+          keyData[args[2]] = true
+          client.setData(productKey, keyData)
         }).catch(err => {
           roblox.getPlayerInfo({userId: targetId}).then(result => {
             message.channel.send(`${client.config.emotes.accept} Alright, I've added ${result.displayName} (@${result.username}) to your whitelist. Any game under this user's profile will be whitelisted.`)
+            keyData[args[2]] = true
+            client.setData(productKey, keyData)
           }).catch(err => {
             message.channel.send(client.config.emotes.deny + " The ID provided was invalid. Please provide a valid **User ID or Group ID.**")
           })
@@ -31,6 +34,8 @@ exports.run = async (client, message, args, level) => { // eslint-disable-line n
         } else {
           message.channel.send(client.config.emotes.deny + "This ID was not found in your whitelist.")
         }
+      } else {
+        message.channel.send(client.config.emotes.deny + " Invalid action. Please provide **add* or **remove** to add or remove an ID to your whitelist.")
       }
     } else {
       message.channel.send(client.config.emotes.deny + " You do not have permission to edit the whitelisting for this key.")
