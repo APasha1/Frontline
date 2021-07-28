@@ -11,6 +11,7 @@ exports.run = async (client, message, args, level) => { // eslint-disable-line n
   }
   
   let keyInfo = {}
+  let keyProducts = {}
   let allKeys = await client.redisClient.keys("*") // retrieves all keys from db in an array
   // this is an O(N) operation. will be somewhat expensive as db grows
   for (let index in allKeys) {
@@ -27,13 +28,14 @@ exports.run = async (client, message, args, level) => { // eslint-disable-line n
         } catch {
           try {
             let userInfo = await roblox.getPlayerInfo(Number(id))
-            names.push(`\`User - ${userInfo.username} (ID ${id})\``)
+            names.push(`\`User - @${userInfo.username} (ID ${id})\``)
           } catch {
             names.push(`**INVALID_ID - (ID ${id})**`)
           }
         }
       }
       keyInfo[key] = whitelisted.length > 0 ? `Whitelisted for **${names.join(", ")}**` : "Nobody has been whitelisted yet for this key."
+      keyProducts[key] = client.config.products[keyData.product].name
     }
   }
   
@@ -41,7 +43,7 @@ exports.run = async (client, message, args, level) => { // eslint-disable-line n
   embed.setColor(client.config.embedColors.default)
   embed.setTitle(`Key information for ${member.user.tag}`)
   for (let key in keyInfo) {
-    embed.addField(key, keyInfo[key])
+    embed.addField(key + " - " + keyProducts[key], keyInfo[key])
   }
   if (Object.keys(keyInfo).length == 0) embed.setDescription("This user doesn't have any keys!")
   embed.setTimestamp()

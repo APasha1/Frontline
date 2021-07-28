@@ -20,7 +20,7 @@ exports.run = async (client, message, args, level) => { // eslint-disable-line n
           client.setData(productKey, keyData)
         }).catch(err => {
           roblox.getPlayerInfo(targetId).then(result => {
-            message.channel.send(`${client.config.emotes.accept} Alright, I've added **${result.displayName} (@${result.username})** to your whitelist. Any game under this user's profile will be whitelisted.`)
+            message.channel.send(`${client.config.emotes.accept} Alright, I've added **$@${result.username}** to your whitelist. Any game under this user's profile will be whitelisted.`)
             keyData.allowedIds[args[2]] = true
             client.setData(productKey, keyData)
           }).catch(err => {
