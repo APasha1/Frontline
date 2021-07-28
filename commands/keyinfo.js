@@ -1,4 +1,5 @@
 const discord = require("discord.js");
+const roblox = require("noblox");
 
 exports.run = async (client, message, args, level) => { // eslint-disable-line no-unused-vars
   let member = message.mentions.members.first()
@@ -17,7 +18,15 @@ exports.run = async (client, message, args, level) => { // eslint-disable-line n
     let keyData = await client.getData(key)
     if (keyData.user && keyData.user == member.id) {
       let whitelisted = Object.keys(keyData.allowedIds)
-      keyInfo[key] = whitelisted.length > 0 ? `Whitelisted for **${whitelisted}**` : "Nobody has been whitelisted yet for this key."
+      let names = []
+      for (let id in whitelisted) {
+        try {
+          
+        } catch {
+          names.push("INVALID_ID")
+        }
+      }
+      keyInfo[key] = whitelisted.length > 0 ? `Whitelisted for ID **${whitelisted}**` : "Nobody has been whitelisted yet for this key."
     }
   }
   
