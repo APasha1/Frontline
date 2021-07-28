@@ -16,9 +16,18 @@ function genID() {
 exports.run = async (client, message, args, level) => { // eslint-disable-line no-unused-vars
   let memberToBindTo = message.mentions.members.first()
   let product = args[1]
+  let productsToList = []
+  
+  for (let productName in client.config.products) {
+    productsToList.push("`" + productName + "`")
+  }
+  
+  let productList = productsToList.join("\n")
   if (!memberToBindTo) return message.channel.send("Please provide a user to generate a key for.")
-  if (!client.config.products[product]) return message.channel.send("Please provide a valid **product** to bind this key to. You can say:\n")
-  message.channel.send(client.config.emotes.accept + " Alright, generated a key for **" + memberToBindTo.user.tag + "**.\nThis will allow them to use Autoranking for **one** group.")
+  if (!client.config.products[product]) return message.channel.send("Please provide a valid **product** to bind this key to. You can provide these:\n\n" + productList)
+  
+  let properName = client.config.products[product].name
+  message.channel.send(client.config.emotes.accept + " Alright, generated a key for **" + memberToBindTo.user.tag + `**.\nThis will allow them to use ${properName} for **one** group.`)
 };
 
 exports.conf = {
@@ -32,5 +41,5 @@ exports.help = {
   name: "genkey",
   category: "Staff",
   description: "Generates a standard key for a user.",
-  usage: "genkey"
+  usage: "genkey [user] [product]"
 };
