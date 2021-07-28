@@ -25,6 +25,8 @@ exports.run = async (client, message, args, level) => { // eslint-disable-line n
   }
   embed.setTimestamp()
   embed.setFooter("Made by megu#6644")
+  
+  message.channel.send({embed})
 };
 
 exports.conf = {
