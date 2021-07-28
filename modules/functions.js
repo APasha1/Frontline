@@ -80,11 +80,11 @@ module.exports = (client) => {
   
   client.getData = async (key) => {
     let data = await client.redisClient.get(key)
-    return data
+    return JSON.parse(data)
   }
 
   client.setData = async (key, val, toSet) => {
-    let data = await client.redisClient.set(key, val)
+    let data = await client.redisClient.set(key, JSON.stringify(val, null, 2))
     return data 
   }
   
