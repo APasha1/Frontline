@@ -1,12 +1,19 @@
 const discord = require("discord.js");
 
 exports.run = async (client, message, args, level) => { // eslint-disable-line no-unused-vars
-  const msg = await message.channel.send("Pinging...");
-  const embed = new discord.MessageEmbed()
-  embed.setColor(client.config.embedColors.default)
-  let latency = ((msg.createdTimestamp - message.createdTimestamp) / 1000).toFixed(2)
-  embed.setDescription(`**Response speed: ${latency} seconds**`)
-  msg.edit({embed})
+  let member = message.mentions.members.first()
+  if (!member) return message.channel.send("Please provide a user to view keys for.")
+  
+  let keyInfo = []
+  let allKeys = client.redisClient.keys("*") // retrieves all keys from db in an array
+  // this is an O(N) operation. will be somewhat expensive as db grows
+  for (let index in allKeys) {
+    let key = allKeys[index]
+    let keyData = client.getData(key)
+    if (keyData.user && keyData.user == member.id) {
+      keyInfo.push()
+    }
+  }
 };
 
 exports.conf = {
