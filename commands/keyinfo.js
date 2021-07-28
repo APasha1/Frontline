@@ -4,16 +4,27 @@ exports.run = async (client, message, args, level) => { // eslint-disable-line n
   let member = message.mentions.members.first()
   if (!member) return message.channel.send("Please provide a user to view keys for.")
   
-  let keyInfo = []
+  let keyInfo = {}
   let allKeys = client.redisClient.keys("*") // retrieves all keys from db in an array
   // this is an O(N) operation. will be somewhat expensive as db grows
   for (let index in allKeys) {
     let key = allKeys[index]
-    let keyData = client.getData(key)
+    let keyData = await client.getData(key)
     if (keyData.user && keyData.user == member.id) {
-      keyInfo.push()
+      let whitelisted = Object.keys(keyData.allowedIds)
+      whitelisted = whitelisted.length > 0 ? whitelisted : "None"
+      keyInfo[key] = whitelisted.length > 0 ? `Whitelisted for **${whitelisted}**` : "Nobody has been whitelisted yet for this key."
     }
   }
+  
+  const embed = new discord.MessageEmbed()
+  embed.setColor(client.config.embedColors.default)
+  embed.setTitle(`Key information for ${member.user.tag}`)
+  for (let key in keyInfo) {
+    embed.addField(key, keyInfo[key])
+  }
+  embed.setTimestamp()
+  embed.setFooter("Made by megu#6644")
 };
 
 exports.conf = {

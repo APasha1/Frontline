@@ -33,7 +33,7 @@ exports.run = async (client, message, args, level) => { // eslint-disable-line n
     allowedIds: {},
   }
   client.setData(newKey, keyToUserFormat)
-  message.channel.send(client.config.emotes.accept + " Alright, generated a key for **" + memberToBindTo.user.tag + `**.\nThis will allow them to use ${properName} for **one** group.`)
+  message.channel.send(client.config.emotes.accept + " Alright, generated a key for **" + memberToBindTo.user.tag + `**.\nThis will allow them to use ${properName} for **one** group.\nPlease give them this key: **${newKey}**`)
 };
 
 exports.conf = {
