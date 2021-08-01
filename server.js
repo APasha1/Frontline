@@ -57,7 +57,7 @@ app.get("/ping", function(err, res) {
   // vibe check
 });
 
-app.get("/verify", function(req, res) {
+app.get("/verifyRankRequest", function(req, res) {
   let body = req.body
   if (!body) {
     return res.sendStatus(400)
@@ -65,7 +65,17 @@ app.get("/verify", function(req, res) {
   if (!body.key) {
     return res.sendStatus(403)  
   }
-  
+  client.getData(body.key).then(keyData => {
+    if (keyData.product == "autoranking") {
+      let creatorId = String(body.creator)
+      if (keyData.allowedIds[creatorId]) {
+        let requesterEndpoint = body.endpoint
+        let rankInfo = body.rankInfo // contains groupId, targetId, and rankNumber
+      }
+    } else {
+      res.sendStatus(403)
+    }
+  })
 });
 
 const listener = app.listen(process.env.PORT, function() {
