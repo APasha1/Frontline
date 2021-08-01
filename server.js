@@ -57,7 +57,7 @@ app.get("/ping", function(err, res) {
   // vibe check
 });
 
-app.get("/verifyRankRequest", function(req, res) {
+app.post("/verifyRankRequest", function(req, res) {
   let body = req.body
   if (!body) {
     return res.sendStatus(400)
