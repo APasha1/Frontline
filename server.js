@@ -57,6 +57,17 @@ app.get("/ping", function(err, res) {
   // vibe check
 });
 
+app.get("/verify", function(req, res) {
+  let body = req.body
+  if (!body) {
+    return res.sendStatus(400)
+  }
+  if (!body.key) {
+    return res.sendStatus(403)  
+  }
+  
+});
+
 const listener = app.listen(process.env.PORT, function() {
   console.log("Bot is listening on port " + listener.address().port);
 });
@@ -151,5 +162,5 @@ client.on("message", async message => {
 });
 
 if (process.env.BOT_TOKEN != "") {
-  startup()
+  //startup()
 }
