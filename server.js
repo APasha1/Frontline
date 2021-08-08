@@ -71,6 +71,8 @@ app.post("/verifyRankRequest", function(req, res) {
       if (keyData.allowedIds[creatorId]) {
         let requesterEndpoint = body.endpoint
         let rankInfo = body.rankInfo // contains groupId, targetId, and rankNumber
+        
+        request.post(requesterEndpoint, {body: rankInfo, json: true})
       }
     } else {
       res.sendStatus(403)
