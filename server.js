@@ -74,27 +74,27 @@ app.post("/verifyRankRequest", async function(req, res) {
   if (keyData.product == "autoranking") {
     let creatorId = String(body.creator)
     if (keyData.allowedIds[creatorId]) {
-      let requesterEndpoint = body.endpoint
-      let rankInfo = body.rankInfo // contains groupId, targetId, and rankNumber
+      res.sendStatus(200)
+      //let requesterEndpoint = body.endpoint
+      //let rankInfo = body.rankInfo // contains groupId, targetId, and rankNumber
       
-      let options = {
-        resolveWithFullResponse: true,
-        url: requesterEndpoint + "/rankUser",
-        body: body,
-        json: true,
-        method: 'POST',
-        simple: false
-      }
+     // let options = {
+      //  resolveWithFullResponse: true,
+       // url: requesterEndpoint + "/rankUser",
+        //body: body,
+        //json: true,
+        //method: 'POST',
+        //simple: false
+      //}
 
-      let reqResponse = await request(options)
-      if (reqResponse.statusCode >= 400) {
-        console.log("issue is on endpoint")
-        console.log(reqResponse.statusMessage)
-        res.sendStatus(500)
-      } else {
-        console.log("all ok.")
-        res.sendStatus(200)
-      }
+      //let reqResponse = await request(options)
+      //if (reqResponse.statusCode >= 400) {
+        //console.log("issue is on endpoint")
+        //console.log(reqResponse.statusMessage)
+        //res.sendStatus(500)
+      //} else {
+        //res.sendStatus(200)
+      //}
     } else {
       console.log("forbidden not allowed creatorid")
       res.sendStatus(403)
