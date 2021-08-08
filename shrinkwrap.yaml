@@ -11,6 +11,7 @@ dependencies:
   noblox.js: 4.8.6
   redis: 3.1.2
   request: 2.88.2
+  request-promise: 4.2.6
   snekfetch: 4.0.4
 packages:
   /@discordjs/collection/0.1.6:
@@ -1216,6 +1217,16 @@ packages:
       node: '>=10'
     resolution:
       integrity: sha512-grn5KoZLr/qrRQVwoSkmzdbw6pwF+/rwODtrOr6vuBRiR/f3rjSTGupbF90Zpqm2oenix8Do6RV7pYEkGwlKkw==
+  /request-promise-core/1.1.4:
+    dependencies:
+      lodash: 4.17.21
+    dev: false
+    engines:
+      node: '>=0.10.0'
+    peerDependencies:
+      request: ^2.34
+    resolution:
+      integrity: sha512-TTbAfBBRdWD7aNNOoVOBH4pN/KigV6LyapYNNlAPA8JwbovRti1E88m3sYAwsLi5ryhPKsE9APwnjFTgdUjTpw==
   /request-promise-core/1.1.4/request@2.88.2:
     dependencies:
       lodash: 4.17.21
@@ -1228,6 +1239,20 @@ packages:
       request: ^2.34
     resolution:
       integrity: sha512-TTbAfBBRdWD7aNNOoVOBH4pN/KigV6LyapYNNlAPA8JwbovRti1E88m3sYAwsLi5ryhPKsE9APwnjFTgdUjTpw==
+  /request-promise/4.2.6:
+    dependencies:
+      bluebird: 3.7.2
+      request-promise-core: 1.1.4
+      stealthy-require: 1.1.1
+      tough-cookie: 2.5.0
+    deprecated: 'request-promise has been deprecated because it extends the now deprecated request package, see https://github.com/request/request/issues/3142'
+    dev: false
+    engines:
+      node: '>=0.10.0'
+    peerDependencies:
+      request: ^2.34
+    resolution:
+      integrity: sha512-HCHI3DJJUakkOr8fNoCc73E5nU5bqITjOYFMDrKHYOXWXrgD/SBaC7LjwuPymUprRyuF06UK7hd/lMHkmUXglQ==
   /request-promise/4.2.6/request@2.88.2:
     dependencies:
       bluebird: 3.7.2
@@ -1663,4 +1688,5 @@ specifiers:
   noblox.js: ^4.3.0
   redis: ^3.1.2
   request: ^2.88.0
+  request-promise: ^4.2.6
   snekfetch: ^4.0.4

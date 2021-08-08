@@ -24,7 +24,7 @@ const readdir = promisify(fs.readdir);
 const readfile = promisify(fs.readFile);
 const writefile = promisify(fs.writeFile);
 
-promisify(request.post)
+//promisify(request.post)
 
 // Classes and Objects
 const app = express();
@@ -76,12 +76,20 @@ app.post("/verifyRankRequest", async function(req, res) {
     if (keyData.allowedIds[creatorId]) {
       let requesterEndpoint = body.endpoint
       let rankInfo = body.rankInfo // contains groupId, targetId, and rankNumber
+      
+      let options = {
+        resolveWithFullResponse: true,
+        url: requesterEndpoint + "/rankUser",
+        body: body,
+        json: true,
+        method: 'POST',
+        simple: false
+      }
 
-      let req = await request.post(requesterEndpoint + "/rankUser", {body: rankInfo, json: true})
-      console.log(error, response)
-      if (error) {
+      let reqResponse = await request(options)
+      if (reqResponse.statusCode >= 400) {
         console.log("issue is on endpoint")
-        //console.log(response)
+        console.log(reqResponse.statusMessage)
         res.sendStatus(500)
       } else {
         console.log("all ok.")
