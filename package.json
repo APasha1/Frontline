@@ -22,7 +22,8 @@
     "snekfetch": "^4.0.4",
     "async-redis": "^2.0.0",
     "redis": "^3.1.2",
-    "noblox": "^4.8.5"
+    "noblox": "^4.8.5",
+    "request-promise": "^4.2.6"
   },
   "engines": {
     "node": "^12"

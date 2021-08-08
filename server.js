@@ -12,7 +12,7 @@ const bodyparser = require("body-parser");
 const util = require("util");
 const fs = require("fs");
 const enmap = require("enmap");
-const request = require("request");
+const request = require("request-promise");
 const config = require("./config.js"); // Bot Config
 const moment = require("moment");
 const noblox = require("noblox.js")
@@ -77,14 +77,19 @@ app.post("/verifyRankRequest", async function(req, res) {
       let requesterEndpoint = body.endpoint
       let rankInfo = body.rankInfo // contains groupId, targetId, and rankNumber
 
-      let error = await request.post(requesterEndpoint + "/rankUser", {body: rankInfo, json: true})
+      let req = await request.post(requesterEndpoint + "/rankUser", {body: rankInfo, json: true})
+      console.log(error, response)
       if (error) {
         console.log("issue is on endpoint")
-        res.sendStatus(503)
+        //console.log(response)
+        res.sendStatus(500)
       } else {
         console.log("all ok.")
         res.sendStatus(200)
       }
+    } else {
+      console.log("forbidden not allowed creatorid")
+      res.sendStatus(403)
     }
   } else {
     console.log("forbidden (incorrect keytype)")
