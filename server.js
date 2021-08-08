@@ -57,27 +57,27 @@ app.get("/ping", function(err, res) {
   // vibe check
 });
 
-app.post("/verifyRankRequest", function(req, res) {
+app.post("/verifyRankRequest", async function(req, res) {
   let body = req.body
+  console.log("hi")
   if (!body) {
     return res.sendStatus(400)
   }
   if (!body.key) {
     return res.sendStatus(403)  
   }
-  client.getData(body.key).then(keyData => {
-    if (keyData.product == "autoranking") {
-      let creatorId = String(body.creator)
-      if (keyData.allowedIds[creatorId]) {
-        let requesterEndpoint = body.endpoint
-        let rankInfo = body.rankInfo // contains groupId, targetId, and rankNumber
-        
-        request.post(requesterEndpoint, {body: rankInfo, json: true})
-      }
-    } else {
-      res.sendStatus(403)
+  let keyData = await client.getData(body.key)
+  if (keyData.product == "autoranking") {
+    let creatorId = String(body.creator)
+    if (keyData.allowedIds[creatorId]) {
+      let requesterEndpoint = body.endpoint
+      let rankInfo = body.rankInfo // contains groupId, targetId, and rankNumber
+
+      request.post(requesterEndpoint + "/rankUser", {body: rankInfo, json: true})
     }
-  })
+  } else {
+    res.sendStatus(403)
+  }
 });
 
 const listener = app.listen(process.env.PORT, function() {
