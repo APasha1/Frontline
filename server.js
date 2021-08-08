@@ -24,6 +24,8 @@ const readdir = promisify(fs.readdir);
 const readfile = promisify(fs.readFile);
 const writefile = promisify(fs.writeFile);
 
+promisify(request.post)
+
 // Classes and Objects
 const app = express();
 const client = new discord.Client();
@@ -59,11 +61,13 @@ app.get("/ping", function(err, res) {
 
 app.post("/verifyRankRequest", async function(req, res) {
   let body = req.body
-  console.log("hi")
+  console.log(body)
   if (!body) {
+    console.log("no body invlid request")
     return res.sendStatus(400)
   }
   if (!body.key) {
+    console.log("forbidden")
     return res.sendStatus(403)  
   }
   let keyData = await client.getData(body.key)
@@ -73,9 +77,17 @@ app.post("/verifyRankRequest", async function(req, res) {
       let requesterEndpoint = body.endpoint
       let rankInfo = body.rankInfo // contains groupId, targetId, and rankNumber
 
-      request.post(requesterEndpoint + "/rankUser", {body: rankInfo, json: true})
+      let error = await request.post(requesterEndpoint + "/rankUser", {body: rankInfo, json: true})
+      if (error) {
+        console.log("issue is on endpoint")
+        res.sendStatus(503)
+      } else {
+        console.log("all ok.")
+        res.sendStatus(200)
+      }
     }
   } else {
+    console.log("forbidden (incorrect keytype)")
     res.sendStatus(403)
   }
 });
