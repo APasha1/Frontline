@@ -2,13 +2,20 @@ const discord = require("discord.js");
 const roblox = require("noblox");
 
 exports.run = async (client, message, args, level) => { // eslint-disable-line no-unused-vars
-  let member = message.mentions.members.first()
-  let didMention = message.mentions.members.first()
-  if (member) {
-    if (level < 10) return message.channel.send(`${client.config.emotes.deny} Only staff members can check the key info of other users.`)
+  let member
+  if (message.mentions.members) {
+    member = message.mentions.members.first()
+    let didMention = message.mentions.members.first()
+    if (member) {
+      if (level < 10) return message.channel.send(`${client.config.emotes.deny} Only staff members can check the key info of other users.`)
+    } else {
+      member = message.member || message.author
+    }
   } else {
-    member = message.member
+    member = {user: message.author}
   }
+  
+  
   
   let keyInfo = {}
   let keyProducts = {}
@@ -49,7 +56,7 @@ exports.run = async (client, message, args, level) => { // eslint-disable-line n
   embed.setTimestamp()
   embed.setFooter("Made by megu#6644")
   
-  message.channel.send(`${client.config.emotes.accept} Check your DMs!`)
+  if (message.channel.type != "dm") message.channel.send(`${client.config.emotes.accept} Check your DMs!`)
   message.author.send({embed})
 };
 

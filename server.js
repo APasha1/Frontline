@@ -139,7 +139,6 @@ client.on("message", async message => {
   client.messagesReceived++;
   // Basic command handling
   let guild = message.guild;
-  let isMasterGuild = guild.id == config.masterServer;
   let channel = message.channel;
   let user = message.author;
   let member = message.member;
@@ -147,10 +146,6 @@ client.on("message", async message => {
   let content = message.content;
   
   // User stuff
-  let userRankData = config.getPermLevel(member);
-  let permLevel = userRankData.roleRank;
-  let rankName = userRankData.roleName;
-  let isOwner = permLevel >= 999;
 
   let isCommand = content.indexOf(config.prefix) == 0;
 
@@ -168,19 +163,27 @@ client.on("message", async message => {
     let cmdPermLevel = config.getRole(cmdRank).rankLevel;
     let cmdEnabled = cmd.conf.enabled;
     let cmdGuildOnly = cmd.conf.guildOnly;
+    let permLevel = 1
 
-    if (permLevel < cmdPermLevel) {
-      return message.reply(
-        `you are not authorized to run this command, as it is for **${cmdRank}s** and above only.`
-      );
+    if (channel.type == "text") {
+      let isMasterGuild = guild.id == config.masterServer;
+      let userRankData = config.getPermLevel(member);
+      
+      permLevel = userRankData.roleRank;
+      let rankName = userRankData.roleName;
+      let isOwner = permLevel >= 999;
+      if (permLevel < cmdPermLevel) {
+        return message.reply(
+          `you are not authorized to run this command, as it is for **${cmdRank}s** and above only.`
+        );
+      }
+      if (cmdGuildOnly && channel.type == "dm") {
+        return message.reply("sorry, this command can only be run in a server.");
+      }
+      if (!cmdEnabled) {
+        return message.reply("this command has been globally disabled.");
+      }
     }
-    if (cmdGuildOnly && channel.type == "dm") {
-      return message.reply("sorry, this command can only be run in a server.");
-    }
-    if (!cmdEnabled) {
-      return message.reply("this command has been globally disabled.");
-    }
-
     if (cmd) {
       client.commandsRan++;
       try {
