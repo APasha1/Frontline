@@ -49,12 +49,8 @@ exports.run = async (client, message, args, level) => { // eslint-disable-line n
   embed.setTimestamp()
   embed.setFooter("Made by megu#6644")
   
-  if (!didMention) {
-    message.channel.send(`${client.config.emotes.accept} Check your DMs!`)
-    message.author.send({embed})
-  } else {
-    message.channel.send({embed})
-  }
+  message.channel.send(`${client.config.emotes.accept} Check your DMs!`)
+  message.author.send({embed})
 };
 
 exports.conf = {
