@@ -55,6 +55,7 @@ app.get("/", function(err, res) {
 });
 
 app.get("/ping", function(err, res) {
+  console.log("vibe check");
   res.sendStatus(200);
   // vibe check
 });
@@ -123,7 +124,14 @@ const startup = async () => {
   
   client.login(process.env.BOT_TOKEN).then(async token => {
     console.log("Logged into Discord!");
-    client.user.setPresence({ activities: [{ name: 'use o!help' }], status: 'online' });
+    client.user.setPresence({
+        status: 'available',
+        activity: {
+            name: 'o!help',
+            type: 'PLAYING',
+            url: 'https://discord.com'
+        }
+    });
   })
   
   
