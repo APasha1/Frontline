@@ -123,6 +123,7 @@ const startup = async () => {
   
   client.login(process.env.BOT_TOKEN).then(async token => {
     console.log("Logged into Discord!");
+    client.user.setPresence({ activities: [{ name: 'use o!help' }], status: 'online' });
   })
   
   
