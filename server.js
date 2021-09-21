@@ -76,26 +76,32 @@ app.post("/verifyRankRequest", async function(req, res) {
     let creatorId = String(body.creator)
     if (keyData.allowedIds[creatorId]) {
       res.sendStatus(200)
-      //let requesterEndpoint = body.endpoint
-      //let rankInfo = body.rankInfo // contains groupId, targetId, and rankNumber
-      
-     // let options = {
-      //  resolveWithFullResponse: true,
-       // url: requesterEndpoint + "/rankUser",
-        //body: body,
-        //json: true,
-        //method: 'POST',
-        //simple: false
-      //}
+    } else {
+      console.log("forbidden not allowed creatorid")
+      res.sendStatus(403)
+    }
+  } else {
+    console.log("forbidden (incorrect keytype)")
+    res.sendStatus(403)
+  }
+});
 
-      //let reqResponse = await request(options)
-      //if (reqResponse.statusCode >= 400) {
-        //console.log("issue is on endpoint")
-        //console.log(reqResponse.statusMessage)
-        //res.sendStatus(500)
-      //} else {
-        //res.sendStatus(200)
-      //}
+app.post("/verifyBusKey", async function(req, res) {
+  let body = req.body
+  console.log(body)
+  if (!body) {
+    console.log("no body invlid request")
+    return res.sendStatus(400)
+  }
+  if (!body.key) {
+    console.log("forbidden")
+    return res.sendStatus(403)  
+  }
+  let keyData = await client.getData(body.key)
+  if (keyData.product == "autoranking") {
+    let creatorId = String(body.creator)
+    if (keyData.allowedIds[creatorId]) {
+      res.sendStatus(200)
     } else {
       console.log("forbidden not allowed creatorid")
       res.sendStatus(403)
