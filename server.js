@@ -98,7 +98,8 @@ app.post("/verifyBusKey", async function(req, res) {
     return res.sendStatus(403)  
   }
   let keyData = await client.getData(body.key)
-  if (keyData.product == "autoranking") {
+  if (!keyData) {return res.sendStatus(403)}
+  if (keyData.product == "busstop") {
     let creatorId = String(body.creator)
     if (keyData.allowedIds[creatorId]) {
       res.sendStatus(200)

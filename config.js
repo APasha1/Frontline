@@ -43,7 +43,8 @@ var config = {
   // productName: id
   products: {
     autoranking: {name: "Odera Autoranking"},
-    admin: {name: "Odera Admin Basics"}
+    admin: {name: "Odera Admin Basics"},
+    busstop: {name: "Odera Bus Stop System"}
   },
   
   
