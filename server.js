@@ -98,7 +98,6 @@ app.post("/verifySideMenu", async function(req, res) {
     return res.sendStatus(403)  
   }
   let keyData = await client.getData(body.key)
-  console.log(keyData)
   if (!keyData) {return res.sendStatus(403)}
   if (keyData.product == "sidemenu") {
     let creatorId = String(body.creator)
