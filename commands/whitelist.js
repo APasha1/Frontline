@@ -22,7 +22,6 @@ exports.run = async (client, message, args, level) => { // eslint-disable-line n
           roblox.getPlayerInfo(targetId).then(result => {
             message.channel.send(`${client.config.emotes.accept} Alright, I've added **$@${result.username}** to your whitelist. Any game under this user's profile will be whitelisted.`)
             keyData.allowedIds[args[2]] = true
-            console.log(args[2])
             client.setData(productKey, keyData)
           }).catch(err => {
             message.channel.send(client.config.emotes.deny + " The ID provided was invalid. Please provide a valid **User ID or Group ID.**")
