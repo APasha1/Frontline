@@ -28,6 +28,9 @@ var ranks = {
   Staff: {
     rankLevel: 10
   },
+  Owner: {
+    rankLvel: 20
+  },
   Megu: {
     rankLevel: 999
   }
