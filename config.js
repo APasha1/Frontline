@@ -45,7 +45,7 @@ var config = {
     autoranking: {name: "Odera Autoranking"},
     admin: {name: "Odera Admin Basics"},
     busstop: {name: "Odera Bus Stop System"},
-    sidemenu: {name: "Side-Menu"}
+    sidemenu: {name: "Side-Menu"} 
   },
   
   

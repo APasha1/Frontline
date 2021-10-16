@@ -86,6 +86,33 @@ app.post("/verifyRankRequest", async function(req, res) {
   }
 });
 
+app.post("/verifySideMenu", async function(req, res) {
+  let body = req.body
+  console.log(body)
+  if (!body) {
+    console.log("no body invlid request")
+    return res.sendStatus(400)
+  }
+  if (!body.key) {
+    console.log("forbidden")
+    return res.sendStatus(403)  
+  }
+  let keyData = await client.getData(body.key)
+  if (!keyData) {return res.sendStatus(403)}
+  if (keyData.product == "sidemenu") {
+    let creatorId = String(body.creator)
+    if (keyData.allowedIds[creatorId]) {
+      res.sendStatus(200)
+    } else {
+      console.log("forbidden not allowed creatorid")
+      res.sendStatus(403)
+    }
+  } else {
+    console.log("forbidden (incorrect keytype)")
+    res.sendStatus(403)
+  }
+});
+
 app.post("/verifyBusKey", async function(req, res) {
   let body = req.body
   console.log(body)
