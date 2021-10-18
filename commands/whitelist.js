@@ -3,22 +3,26 @@ const roblox = require("noblox");
 const fetch = require("node-fetch")
 
 exports.run = async (client, message, args, level) => { // eslint-disable-line no-unused-vars
+  
+  
 
 fetch(`https://api.blox.link/v1/user/${message.author.id}`).then(res => res.json())
-      .then(json => {
+      .then(json => { 
 
 const userid = json.primaryAccount
 
-console.log(userid)
+console.log(userid) //UserId do be undefined
+  
 
+const rank = roblox.getRankInGroup("11492884", userid).then(rank => {
+
+  
 if (!json.error){
-
-const rank = await roblox.getRankInGroup("11492884", userid)
 
 console.log(rank)
 
 if(rank === 0){
-const embed = discord.MessageEmbed()
+const embed = new discord.MessageEmbed()
 .setTitle("Error")
 .setDescription("Permission error: USER_NOT_IN_GROUP")
 .setColor("RED")
@@ -31,8 +35,10 @@ return message.channel.send(embed)
 return message.channel.send("You are not verified with BloxLink, please run `!verify`")
 
 }
-}) 
+  
+  })
 
+})
   
   
   
