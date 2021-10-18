@@ -1,7 +1,37 @@
 const discord = require("discord.js");
 const roblox = require("noblox");
 
+
 exports.run = async (client, message, args, level) => { // eslint-disable-line no-unused-vars
+
+fetch(`https://api.blox.link/v1/user/${message.author.id}`).then(res => res.json())
+      .then(json => {
+
+const userid = json.primaryAccount
+
+if (!json.error){
+
+const rank = roblox.getRankInGroup("11492884", userid)
+
+if(rank === 0){
+const embed = discord.MessageEmbed()
+.setTitle("Error")
+.setDescription("Permission error: USER_NOT_IN_GROUP")
+.setColor("RED")
+message.channel.send(embed)
+
+
+}
+}else{
+
+message.channel.send("You are not verified with BloxLink, please run `!verify`")
+
+}
+}) 
+
+  
+  
+  
   let productKey = args[0]
   let action = args[1]
   let targetId = Number(args[2])
