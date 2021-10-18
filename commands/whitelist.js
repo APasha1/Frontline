@@ -27,7 +27,7 @@ exports.run = async (client, message, args, level) => {
                   .setDescription("Permission error: USER_NOT_IN_GROUP")
                   .setColor("RED");
                 return message.channel.send(embed);
-                return;
+                return false;
               }
             } else {
               return message.channel.send(
@@ -47,6 +47,7 @@ exports.run = async (client, message, args, level) => {
 
 
 setTimeout(function(){
+  if(check){
 
   client.getData(productKey).then(keyData => {
 
@@ -120,7 +121,9 @@ setTimeout(function(){
           " This key does not exist in the database. Please make sure you've spelt it correctly."
       );
     });
-  
+  }else{
+    return false;
+  }
   }, 2000)
 };
 
