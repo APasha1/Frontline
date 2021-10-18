@@ -10,7 +10,7 @@ function sleep(delay) {
 exports.run = async (client, message, args, level) => {
   // eslint-disable-line no-unused-vars
 
-      fetch(`https://api.blox.link/v1/user/${message.author.id}`)
+      const check = fetch(`https://api.blox.link/v1/user/${message.author.id}`)
         .then(res => res.json())
         .then(json => {
           const userid = json.primaryAccount;
@@ -27,6 +27,7 @@ exports.run = async (client, message, args, level) => {
                   .setDescription("Permission error: USER_NOT_IN_GROUP")
                   .setColor("RED");
                 return message.channel.send(embed);
+                return;
               }
             } else {
               return message.channel.send(
@@ -36,7 +37,7 @@ exports.run = async (client, message, args, level) => {
           });
         });
     
-    sleep(10000)
+  
   
   let productKey = args[0];
   let action = args[1];
@@ -44,8 +45,10 @@ exports.run = async (client, message, args, level) => {
 
   let maxSlotCount = 1;
 
-  client.getData(productKey).then(keyData => {
 
+setTimeout(function(){
+
+  client.getData(productKey).then(keyData => {
 
       if (keyData.user == message.author.id) {
         if (action == "add") {
@@ -117,6 +120,8 @@ exports.run = async (client, message, args, level) => {
           " This key does not exist in the database. Please make sure you've spelt it correctly."
       );
     });
+  
+  }, 2000)
 };
 
 exports.conf = {
