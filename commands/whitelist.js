@@ -49,6 +49,12 @@ return message.channel.send("You are not verified with BloxLink, please run `!ve
   let maxSlotCount = 1
   
   client.getData(productKey).then(keyData => {
+    
+    
+    
+    
+  
+    
     if (keyData.user == message.author.id) {
       if (action == "add") {
         let count = Object.keys(keyData.allowedIds).length
