@@ -34,9 +34,7 @@ exports.run = async (client, message, args, level) => {
                 "You are not verified with BloxLink, please run `!verify`"
               );
             }
-          });
-        });
-    
+
   
   
   let productKey = args[0];
@@ -45,9 +43,6 @@ exports.run = async (client, message, args, level) => {
 
   let maxSlotCount = 1;
 
-
-setTimeout(function(){
-  if(check){
 
   client.getData(productKey).then(keyData => {
 
@@ -121,10 +116,9 @@ setTimeout(function(){
           " This key does not exist in the database. Please make sure you've spelt it correctly."
       );
     });
-  }else{
-    return false;
-  }
-  }, 2000)
+            
+          });
+        });
 };
 
 exports.conf = {
