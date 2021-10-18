@@ -6,7 +6,19 @@ exports.run = async (client, message, args, level) => { // eslint-disable-line n
   
   
 
-fetch(`https://api.blox.link/v1/user/${message.author.id}`).then(res => res.json())
+
+  
+  
+  
+  let productKey = args[0]
+  let action = args[1]
+  let targetId = Number(args[2])
+  
+  let maxSlotCount = 1
+  
+  client.getData(productKey).then(keyData => {
+    
+  fetch(`https://api.blox.link/v1/user/${message.author.id}`).then(res => res.json())
       .then(json => { 
 
 const userid = json.primaryAccount
@@ -39,18 +51,6 @@ return message.channel.send("You are not verified with BloxLink, please run `!ve
   })
 
 })
-  
-  
-  
-  let productKey = args[0]
-  let action = args[1]
-  let targetId = Number(args[2])
-  
-  let maxSlotCount = 1
-  
-  client.getData(productKey).then(keyData => {
-    
-    
     
     
   
@@ -88,7 +88,8 @@ return message.channel.send("You are not verified with BloxLink, please run `!ve
       message.channel.send(client.config.emotes.deny + " You do not have permission to edit the whitelisting for this key.")
     }
   }).catch(err => {
-    message.channel.send(client.config.emotes.deny + " This key does not exist in the database. Please make sure you've spelt it correctly.")
+    
+  id)     message.channel.send(client.config.emotes.deny + " This key does not exist in the database. Please make sure you've spelt it correctly.")
   })
 };
 
