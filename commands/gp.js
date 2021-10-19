@@ -71,7 +71,11 @@ exports.run = async (client, message, args, level) => {
       
     }
   
+  } else if(message.guild.id === "lol"){
+    
   }
+  
+  
 }
 
 exports.conf = {
