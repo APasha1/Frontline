@@ -205,7 +205,7 @@ client.on("message", async message => {
     let cmdRank = cmd.conf.permLevel;
     let cmdPermLevel = config.getRole(cmdRank).rankLevel;
     let cmdEnabled = cmd.conf.enabled;
-    let cmdGuildOnly = cmd.conf.guildOnly;
+    let OderaOnly = cmd.conf.oderaOnly;
     let permLevel = 1
 
     if (channel.type == "text") {
@@ -220,7 +220,7 @@ client.on("message", async message => {
           `you are not authorized to run this command, as it is for **${cmdRank}s** and above only.`
         );
       }
-      if (cmdGuildOnly && channel.type == "dm") {
+      if (OderaOnly && channel.type == "dm") {
         return message.reply("sorry, this command can only be run in a server.");
       }
       if (!cmdEnabled) {

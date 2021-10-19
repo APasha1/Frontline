@@ -59,7 +59,7 @@ exports.run = async (client, message, args, level) => { // eslint-disable-line n
 
 exports.conf = {
   enabled: true,
-  guildOnly: false,
+  oderaOnly: false,
   aliases: ["halp", "cmds", "commands"],
   permLevel: "User"
 };
