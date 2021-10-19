@@ -219,6 +219,11 @@ client.on("message", async message => {
       let rankName = userRankData.roleName;
       let isOwner = permLevel >= 999;
       if (permLevel < cmdPermLevel) {
+        if(cmdRank === 'Megu'){
+        return message.reply(
+          `you are not authorized to run this command, as it is for **ODERA STAFFs** and above only.`
+        );
+        }
         return message.reply(
           `you are not authorized to run this command, as it is for **${cmdRank}s** and above only.`
         );

@@ -8,10 +8,10 @@ exports.run = async (client, message, args, level) => {
     let product = args[1]
 
     if(!args[0]){
-      return message.channel.send("Yo man? You know what you frogot.... The format is: giveproduct <user> <product> <key>")
+      return message.channel.send("Yo man? You know what you forgot.... The format is: giveproduct <user> <product> <key>")
     }
     if(!args[1]){
-      return message.channel.send("Yo man? You know what you frogot.... The format is: giveproduct <user> <product> <key>" + "\n\n" + "`Valid products:`" + "\n\n" + "`admin`" + "\n" + "`busstop`" + "\n" + "`autoranking`")
+      return message.channel.send("Yo man? You know what you forgot.... The format is: giveproduct <user> <product> <key>" + "\n\n" + "`Valid products:`" + "\n\n" + "`admin`" + "\n" + "`busstop`" + "\n" + "`autoranking`")
     }
 
     const arrylol = ["autoranking", "busstop", "admin", "sidemenu"]
@@ -25,7 +25,7 @@ exports.run = async (client, message, args, level) => {
 
     
     if(!args[2]){
-      return message.channel.send("Yo man? You know what you frogot.... The format is: giveproduct <user> <product> <key>")
+      return message.channel.send("Yo man? You know what you forgot.... The format is: giveproduct <user> <product> <key>")
     }
     if(product === "admin"){
       const embed = new discord.MessageEmbed()

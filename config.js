@@ -17,7 +17,7 @@ var perms = {
     return [user.roles.cache.find(x => x.name.toLowerCase() == 'Bot Access'), 10, "Staff"]
   },
   Megu: (user) => {
-    return [user.id == "240639333567168512", 999, "Megu"]
+    return [user.id == "240639333567168512", 999, "ODERA STAFF"]
   }
 }
 
