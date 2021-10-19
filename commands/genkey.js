@@ -13,10 +13,13 @@ function genID() {
   });
 }
 
-exports.run = async (client, message, args, level) => { // eslint-disable-line no-unused-vars
+exports.run = async (client, message, args, level) => {// eslint-disable-line no-unused-vars
   let memberToBindTo = message.mentions.members.first()
   let product = args[1]
   let productsToList = []
+  
+  
+  if()
   
   for (let productName in client.config.products) {
     productsToList.push("`" + productName + "`")

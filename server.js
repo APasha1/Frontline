@@ -212,6 +212,9 @@ client.on("message", async message => {
       let isMasterGuild = guild.id == config.masterServer;
       let userRankData = config.getPermLevel(member);
       
+      
+      
+      
       permLevel = userRankData.roleRank;
       let rankName = userRankData.roleName;
       let isOwner = permLevel >= 999;

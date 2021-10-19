@@ -41,6 +41,10 @@ var config = {
   ownerId: "240639333567168512",
   
   // productName: id
+  products_studiosname: {
+  sus: { name: "sus" }
+  },
+  
   products: {
     autoranking: {name: "Odera Autoranking"},
     admin: {name: "Odera Admin Basics"},
