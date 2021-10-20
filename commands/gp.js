@@ -102,7 +102,7 @@ exports.run = async (client, message, args, level) => {
       .setColor("GREEN")
       const lol = user.send(embed)
       user.send("Files: N/A")
-      message.channel.send(")
+      message.channel.send("We sent the information to the user...")
     }
     
   }
