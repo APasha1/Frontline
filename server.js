@@ -60,7 +60,7 @@ app.get("/ping", function(err, res) {
   // vibe check
 });
 
-app.post("/ghosty/verifyAfganistanMap", async function(res, req) {
+app.post("/ghostly/verifyAfganistanMap", async function(res, req) {
   let body = req.body
   console.log(body)
   if (!body) {

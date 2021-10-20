@@ -99,7 +99,7 @@ exports.run = async (client, message, args, level) => {
       .setDescription("> Here is your whitelist key:" + args[2] + "\n\n **Please don't redistribute/resell/leak this product as it will result in a DMCA/amongst a removal of your key leaving your product useless.** \n\n > To whitelist your group run o!whitelist (Your key) add (group/userID) or run o!help [category] to understand how to perform a bot action \n\n > You are able to run these commands on bot or on server (Except o!keyinfo (server only)) \n\n > You can find the file of the product on the channels, you've been given access on server \n\n *DM Support with any issues or on the bug/support channel you've been given with your product* \n\n**Have a great day!**")
       .setColor("GREEN")
       const lol = user.send(embed)
-      user.send({)
+      user.send({ files: ["./FOBAfghan.rbxl"] })
     }
     
   }

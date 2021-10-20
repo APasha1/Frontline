@@ -41,7 +41,7 @@ var config = {
   ownerId: "240639333567168512",
   
   // productName: id
-  products_ghosty: {
+  products_ghostly: {
   afghanistan: { name: "afghanistan" }
   },
   
