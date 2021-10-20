@@ -5,7 +5,7 @@ exports.run = async (client, message, args, level) => {
   if(message.guild.id === "858428376233541633"){
 
     let user = message.mentions.members.first() || await message.guild.members.fetch(args[0])
-    let product = args[1]
+    let product = args[1];
 
     if(!args[0]){
       return message.channel.send("Yo man? You know what you forgot.... The format is: giveproduct <user> <product> <key>")
@@ -25,8 +25,8 @@ exports.run = async (client, message, args, level) => {
 
     
     if(!args[2]){
-      return message.channel.send("Yo man? You know what you forgot.... The format is: giveproduct <user> <product> <key>")
-    }
+      return message.channel.send("Yo man? You know what you forgot.... The format is: giveproduct <user> <product> <key>");
+    };
     if(product === "admin"){
       const embed = new discord.MessageEmbed()
       .setTitle("Thanks for purchasing from Odera Studios!")
@@ -71,7 +71,10 @@ exports.run = async (client, message, args, level) => {
       
     }
   
-  } else if(message.guild.id === "lol"){
+  } else if(message.guild.id === "875553369266204702"){
+    
+    
+    //here
     
   }
   

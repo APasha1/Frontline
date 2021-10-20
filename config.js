@@ -41,8 +41,8 @@ var config = {
   ownerId: "240639333567168512",
   
   // productName: id
-  products_studiosname: {
-  sus: { name: "sus" }
+  products_ghosty: {
+  afghanistan: { name: "afghanistan" }
   },
   
   products: {

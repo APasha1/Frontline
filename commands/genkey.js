@@ -42,7 +42,7 @@ exports.run = async (client, message, args, level) => {// eslint-disable-line no
   
   } else if(message.guild.id === "875553369266204702"){
 
-  for (let productName in client.config.products) {
+  for (let productName in client.config.products_ghosty) {
     productsToList.push("`" + productName + "`")
   }
   
