@@ -60,7 +60,7 @@ app.get("/ping", function(err, res) {
   // vibe check
 });
 
-app.post("/ghosty/verifyProductName", async function(res, req) {
+app.post("/ghosty/verifyAfganistanMap", async function(res, req) {
   let body = req.body
   console.log(body)
   if (!body) {
@@ -72,7 +72,7 @@ app.post("/ghosty/verifyProductName", async function(res, req) {
     return res.sendStatus(403)  
   }
   let keyData = await client.getData(body.key) 
-  if (keyData.product == "productname") {  
+  if (keyData.product == "afghanistan") {  
     let creatorId = String(body.creator)
     if (keyData.allowedIds[creatorId]) {
       res.sendStatus(200)
