@@ -40,13 +40,13 @@ exports.run = async (client, message, args, level) => {// eslint-disable-line no
   message.channel.send(client.config.emotes.accept + " Alright, generated a key for **" + memberToBindTo.user.tag + `**.\nThis will allow them to use ${properName} for **one** group.\nPlease give them this key: **${newKey}**`)
   
   
-  } else if(message.guild.id === "unknown"){
+  } else if(message.guild.id === "875553369266204702"){
 
   for (let productName in client.config.products) {
     productsToList.push("`" + productName + "`")
   }
   
-  let productList = productsToList.join("\n")
+  let productList = productsToList.join("\n");
   if (!memberToBindTo) return message.channel.send(`${client.config.emotes.deny} Please provide a user to generate a key for.`)
   if (!client.config.products[product]) return message.channel.send(`${client.config.emotes.deny} Please provide a valid **product** to bind this key to. You can provide these:\n\n` + productList)
   
@@ -60,7 +60,7 @@ exports.run = async (client, message, args, level) => {// eslint-disable-line no
   client.setData(newKey, keyToUserFormat)
   message.channel.send(client.config.emotes.accept + " Alright, generated a key for **" + memberToBindTo.user.tag + `**.\nThis will allow them to use ${properName} for **one** group.\nPlease give them this key: **${newKey}**`)
 
-  } else if(message.guild.id === "lol"){
+  } else if(message.guild.id === "no"){
     
   }
   
