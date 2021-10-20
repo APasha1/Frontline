@@ -44,13 +44,13 @@ exports.run = async (client, message, args, level) => {// eslint-disable-line no
 
   for (let productName in client.config.products_ghostly) {
     productsToList.push("`" + productName + "`")
-  }
+  };
   
   let productList = productsToList.join("\n");
   if (!memberToBindTo) return message.channel.send(`${client.config.emotes.deny} Please provide a user to generate a key for.`)
-  if (!client.config.products[product]) return message.channel.send(`${client.config.emotes.deny} Please provide a valid **product** to bind this key to. You can provide these:\n\n` + productList)
+  if (!client.config.products_ghostly[product]) return message.channel.send(`${client.config.emotes.deny} Please provide a valid **product** to bind this key to. You can provide these:\n\n` + productList);
   
-  let properName = client.config.products[product].name
+  let properName = client.config.products_ghostly[product].name
   let newKey = genID()
   let keyToUserFormat = {
     user: memberToBindTo.id,

@@ -8,10 +8,10 @@ exports.run = async (client, message, args, level) => {
     let product = args[1];
 
     if(!args[0]){
-      return message.channel.send("Yo man? You know what you forgot.... The format is: giveproduct <user> <product> <key>")
+      return message.channel.send("You know what you forgot.... The format is: giveproduct <user> <product> <key>")
     }
     if(!args[1]){
-      return message.channel.send("Yo man? You know what you forgot.... The format is: giveproduct <user> <product> <key>" + "\n\n" + "`Valid products:`" + "\n\n" + "`admin`" + "\n" + "`busstop`" + "\n" + "`autoranking`")
+      return message.channel.send("You know what you forgot.... The format is: giveproduct <user> <product> <key>" + "\n\n" + "`Valid products:`" + "\n\n" + "`admin`" + "\n" + "`busstop`" + "\n" + "`autoranking`")
     }
 
     const arrylol = ["autoranking", "busstop", "admin", "sidemenu"]
@@ -84,13 +84,15 @@ exports.run = async (client, message, args, level) => {
     }
 
     const arrylol = ["afghanistan"]
-
+    const productList = [];
+  for (let productName in client.config.products_ghostly) {
+    productList.push("`" + productName + "`")
+  };
+    
       let lols = arrylol.includes(args[1])
       
-    if(lols === false){
-      return message.channel.send("Please put a valid product.... The format is: giveproduct <user> <product> <key>" + "\n\n" + "`Valid products:`" + "\n\n" + "afganistan`")
-        
-      }
+      if (!client.config.products_ghostly[product]) return message.channel.send(`${client.config.emotes.deny} Please provide a valid **product** to bind this key to. You can provide these:\n\n` + productList);
+  
     
     if(product === "afghanistan"){
   
@@ -99,7 +101,8 @@ exports.run = async (client, message, args, level) => {
       .setDescription("> Here is your whitelist key:" + args[2] + "\n\n **Please don't redistribute/resell/leak this product as it will result in a DMCA/amongst a removal of your key leaving your product useless.** \n\n > To whitelist your group run o!whitelist (Your key) add (group/userID) or run o!help [category] to understand how to perform a bot action \n\n > You are able to run these commands on bot or on server (Except o!keyinfo (server only)) \n\n > You can find the file of the product on the channels, you've been given access on server \n\n *DM Support with any issues or on the bug/support channel you've been given with your product* \n\n**Have a great day!**")
       .setColor("GREEN")
       const lol = user.send(embed)
-      user.send({ files: ["./FOBAfghan.rbxl"] })
+      user.send("Files: N/A")
+      message.channel.send(")
     }
     
   }
@@ -110,7 +113,7 @@ exports.run = async (client, message, args, level) => {
 exports.conf = {
   enabled: true,
   oderaOnly: false,
-  aliases: ["halp", "cmds", "commands"],
+  aliases: ["giveproduct"],
   permLevel: "User"
 };
 
