@@ -14,7 +14,7 @@ var perms = {
     return [true, 1, "User"]
   },
   Staff: (user) => {
-    return [user.roles.cache.find(x => x.name.toLowerCase() == 'Bot Access'), 10, "Staff"]
+    return [user.roles.cache.find(x => x.name.toLowerCase() == 'bot access'), 10, "Staff"]
   },
   Megu: (user) => {
     return [user.id == "240639333567168512", 999, "Megu"]
@@ -42,7 +42,7 @@ var config = {
   
   // productName: id
   products_ghostly: {
-  afghanistan: { name: "afghanistan" }
+  afghanistan: {name: "afghanistan"}
   },
   
   products: {
