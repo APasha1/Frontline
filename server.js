@@ -221,6 +221,13 @@ client.on("message", async message => {
 
   // Command detections
   if (isCommand) {
+    if(message.guild){
+    if(message.guild.id === "875553369266204702"){
+      
+      return message.channel.send("This servers subscription has expired - Join discord.gg/odera to renew")
+      
+    }
+      }
     let choppedMessage = content.slice(config.prefix.length);
     choppedMessage = choppedMessage.trim();
     let args = choppedMessage.split(" ");
@@ -274,6 +281,7 @@ client.on("message", async message => {
     } else {
       message.reply("command not found");
     }
+    
   } else {
     // Handle messages that aren't commands
   }
