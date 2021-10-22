@@ -45,6 +45,10 @@ var config = {
   afghanistan: {name: "afghanistan"}
   },
   
+  products_studios: {
+    productnamehere: { name: "producthere" },
+  },
+  
   products: {
     autoranking: {name: "Odera Autoranking"},
     admin: {name: "Odera Admin Basics"},
