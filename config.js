@@ -42,7 +42,7 @@ var config = {
   
   // productName: id
   products_Asilllian: {
-  SCP_Bundle: {name: "SCPBundle"}, //NO REPLACE GHOSTY
+  SCP_Bundle: {name: "SCPBundle"}, 
   PlayersListLeaderboard: { name: "PlayersListLeaderboard" },
   RankTagV2: { name: "RankTagV2" },
   SimpleMenuGUI: { name: "SimpleMenuGUI" },
