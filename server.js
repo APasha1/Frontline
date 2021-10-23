@@ -60,7 +60,7 @@ app.get("/ping", function(err, res) {
   // vibe check
 });
 
-app.post("/Asilllian/scpbundle", async function(res, req) {
+app.post("/Asilllian/SCPBundle", async function(res, req) {
   let body = req.body
   console.log(body)
   if (!body) {
@@ -72,7 +72,7 @@ app.post("/Asilllian/scpbundle", async function(res, req) {
     return res.sendStatus(403)  
   }
   let keyData = await client.getData(body.key) 
-  if (keyData.product == "scpbundle") {  
+  if (keyData.product == "SCPBundle") {  
     let creatorId = String(body.creator)
     if (keyData.allowedIds[creatorId]) {
       res.sendStatus(200)
@@ -92,7 +92,7 @@ app.post("/Asilllian/scpbundle", async function(res, req) {
 
 
 //here bruh many times bec we need many
- app.post("/Asilllian/PlayerLeaderboard", async function(res, req) {
+ app.post("/Asilllian/PlayersListLeaderboard", async function(res, req) {
   let body = req.body
   console.log(body)
   if (!body) {
@@ -104,7 +104,7 @@ app.post("/Asilllian/scpbundle", async function(res, req) {
     return res.sendStatus(403)  
   }
   let keyData = await client.getData(body.key) 
-  if (keyData.product == "PlayerLeaderboard") {  
+  if (keyData.product == "PlayersListLeaderboard") {  
     let creatorId = String(body.creator)
     if (keyData.allowedIds[creatorId]) {
       res.sendStatus(200)
@@ -120,7 +120,7 @@ app.post("/Asilllian/scpbundle", async function(res, req) {
 })
 
 
-app.post("/Asilllian/RanktagV2", async function(res, req) {
+app.post("/Asilllian/RankTagV2", async function(res, req) {
   let body = req.body
   console.log(body)
   if (!body) {
@@ -132,7 +132,7 @@ app.post("/Asilllian/RanktagV2", async function(res, req) {
     return res.sendStatus(403)  
   }
   let keyData = await client.getData(body.key) 
-  if (keyData.product == "RanktagV2") {  
+  if (keyData.product == "RankTagV2") {  
     let creatorId = String(body.creator)
     if (keyData.allowedIds[creatorId]) {
       res.sendStatus(200)
@@ -147,7 +147,7 @@ app.post("/Asilllian/RanktagV2", async function(res, req) {
   
 });
 
-app.post("/Asilllian/SimpleMenu", async function(res, req) {
+app.post("/Asilllian/SimpleMenuGUI", async function(res, req) {
   let body = req.body
   console.log(body)
   if (!body) {
@@ -159,7 +159,7 @@ app.post("/Asilllian/SimpleMenu", async function(res, req) {
     return res.sendStatus(403)  
   }
   let keyData = await client.getData(body.key) 
-  if (keyData.product == "SimpleMenu") {  
+  if (keyData.product == "SimpleMenuGUI") {  
     let creatorId = String(body.creator)
     if (keyData.allowedIds[creatorId]) {
       res.sendStatus(200)
@@ -174,7 +174,7 @@ app.post("/Asilllian/SimpleMenu", async function(res, req) {
   
 });
 
-app.post("/Asilllian/ShopGui", async function(res, req) {
+app.post("/Asilllian/ShopGUI", async function(res, req) {
   let body = req.body
   console.log(body)
   if (!body) {
@@ -186,7 +186,7 @@ app.post("/Asilllian/ShopGui", async function(res, req) {
     return res.sendStatus(403)  
   }
   let keyData = await client.getData(body.key) 
-  if (keyData.product == "ShopGui") {  
+  if (keyData.product == "ShopGUI") {  
     let creatorId = String(body.creator)
     if (keyData.allowedIds[creatorId]) {
       res.sendStatus(200)
@@ -201,7 +201,7 @@ app.post("/Asilllian/ShopGui", async function(res, req) {
   
 });
 
-app.post("/studiosname/productname", async function(res, req) {
+app.post("/Asilllian/AnnouncementsSystem", async function(res, req) {
   let body = req.body
   console.log(body)
   if (!body) {
@@ -213,7 +213,7 @@ app.post("/studiosname/productname", async function(res, req) {
     return res.sendStatus(403)  
   }
   let keyData = await client.getData(body.key) 
-  if (keyData.product == "productname") {  
+  if (keyData.product == "AnnouncementsSystem") {  
     let creatorId = String(body.creator)
     if (keyData.allowedIds[creatorId]) {
       res.sendStatus(200)
@@ -229,7 +229,7 @@ app.post("/studiosname/productname", async function(res, req) {
 });
 
 
-app.post("/Asilllian/", async function(res, req) {
+app.post("/Asilllian/RankTagV1", async function(res, req) {
   let body = req.body
   console.log(body)
   if (!body) {
@@ -241,7 +241,7 @@ app.post("/Asilllian/", async function(res, req) {
     return res.sendStatus(403)  
   }
   let keyData = await client.getData(body.key) 
-  if (keyData.product == "productname") {  
+  if (keyData.product == "RankTagV1") {  
     let creatorId = String(body.creator)
     if (keyData.allowedIds[creatorId]) {
       res.sendStatus(200)
