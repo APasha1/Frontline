@@ -60,7 +60,176 @@ app.get("/ping", function(err, res) {
   // vibe check
 });
 
+app.post("/Asilllian/scpbundle", async function(res, req) {
+  let body = req.body
+  console.log(body)
+  if (!body) {
+    console.log("no body invlid request")
+    return res.sendStatus(400);
+  }
+  if (!body.key) {
+    console.log("forbidden")
+    return res.sendStatus(403)  
+  }
+  let keyData = await client.getData(body.key) 
+  if (keyData.product == "scpbundle") {  
+    let creatorId = String(body.creator)
+    if (keyData.allowedIds[creatorId]) {
+      res.sendStatus(200)
+    } else {
+      console.log("forbidden not allowed creatorid")
+      res.sendStatus(403)
+    }
+  } else {
+    console.log("forbidden (incorrect keytype)")
+    res.sendStatus(403)
+  }
+  
+});
+
+
+
+
+
+//here bruh many times bec we need many
+ app.post("/Asilllian/PlayerLeaderboard", async function(res, req) {
+  let body = req.body
+  console.log(body)
+  if (!body) {
+    console.log("no body invlid request")
+    return res.sendStatus(400);
+  }
+  if (!body.key) {
+    console.log("forbidden")
+    return res.sendStatus(403)  
+  }
+  let keyData = await client.getData(body.key) 
+  if (keyData.product == "PlayerLeaderboard") {  
+    let creatorId = String(body.creator)
+    if (keyData.allowedIds[creatorId]) {
+      res.sendStatus(200)
+    } else {
+      console.log("forbidden not allowed creatorid")
+      res.sendStatus(403)
+    }
+  } else {
+    console.log("forbidden (incorrect keytype)")
+    res.sendStatus(403)
+  }
+  
+})
+
+
+app.post("/Asilllian/RanktagV2", async function(res, req) {
+  let body = req.body
+  console.log(body)
+  if (!body) {
+    console.log("no body invlid request")
+    return res.sendStatus(400);
+  }
+  if (!body.key) {
+    console.log("forbidden")
+    return res.sendStatus(403)  
+  }
+  let keyData = await client.getData(body.key) 
+  if (keyData.product == "RanktagV2") {  
+    let creatorId = String(body.creator)
+    if (keyData.allowedIds[creatorId]) {
+      res.sendStatus(200)
+    } else {
+      console.log("forbidden not allowed creatorid")
+      res.sendStatus(403)
+    }
+  } else {
+    console.log("forbidden (incorrect keytype)")
+    res.sendStatus(403)
+  }
+  
+});
+
+app.post("/Asilllian/SimpleMenu", async function(res, req) {
+  let body = req.body
+  console.log(body)
+  if (!body) {
+    console.log("no body invlid request")
+    return res.sendStatus(400);
+  }
+  if (!body.key) {
+    console.log("forbidden")
+    return res.sendStatus(403)  
+  }
+  let keyData = await client.getData(body.key) 
+  if (keyData.product == "SimpleMenu") {  
+    let creatorId = String(body.creator)
+    if (keyData.allowedIds[creatorId]) {
+      res.sendStatus(200)
+    } else {
+      console.log("forbidden not allowed creatorid")
+      res.sendStatus(403)
+    }
+  } else {
+    console.log("forbidden (incorrect keytype)")
+    res.sendStatus(403)
+  }
+  
+});
+
+app.post("/Asilllian/ShopGui", async function(res, req) {
+  let body = req.body
+  console.log(body)
+  if (!body) {
+    console.log("no body invlid request")
+    return res.sendStatus(400);
+  }
+  if (!body.key) {
+    console.log("forbidden")
+    return res.sendStatus(403)  
+  }
+  let keyData = await client.getData(body.key) 
+  if (keyData.product == "ShopGui") {  
+    let creatorId = String(body.creator)
+    if (keyData.allowedIds[creatorId]) {
+      res.sendStatus(200)
+    } else {
+      console.log("forbidden not allowed creatorid")
+      res.sendStatus(403)
+    }
+  } else {
+    console.log("forbidden (incorrect keytype)")
+    res.sendStatus(403)
+  }
+  
+});
+
 app.post("/studiosname/productname", async function(res, req) {
+  let body = req.body
+  console.log(body)
+  if (!body) {
+    console.log("no body invlid request")
+    return res.sendStatus(400);
+  }
+  if (!body.key) {
+    console.log("forbidden")
+    return res.sendStatus(403)  
+  }
+  let keyData = await client.getData(body.key) 
+  if (keyData.product == "productname") {  
+    let creatorId = String(body.creator)
+    if (keyData.allowedIds[creatorId]) {
+      res.sendStatus(200)
+    } else {
+      console.log("forbidden not allowed creatorid")
+      res.sendStatus(403)
+    }
+  } else {
+    console.log("forbidden (incorrect keytype)")
+    res.sendStatus(403)
+  }
+  
+});
+
+
+app.post("/Asilllian/", async function(res, req) {
   let body = req.body
   console.log(body)
   if (!body) {
