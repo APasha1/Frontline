@@ -42,8 +42,13 @@ var config = {
   
   // productName: id
   products_Asilllian: {
-  SCP_Bundle: {name: "SCP Bundle"}, //NO REPLACE GHOSTY
-  PlayersListLeader
+  SCP_Bundle: {name: "SCPBundle"}, //NO REPLACE GHOSTY
+  PlayersListLeaderboard: { name: "PlayersListLeaderboard" },
+  RankTagV2: { name: "RankTagV2" },
+  SimpleMenuGUI: { name: "SimpleMenuGUI" },
+  ShopGUI: { name: "ShopGUI"},
+  AnnouncementsSystem: { name: "AnnouncementsSystem" },
+  RankTagV1: { name: "RankTagV1" }
   },
   
   products_ghostly: {
