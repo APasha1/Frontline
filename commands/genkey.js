@@ -40,9 +40,9 @@ exports.run = async (client, message, args, level) => {// eslint-disable-line no
   message.channel.send(client.config.emotes.accept + " Alright, generated a key for **" + memberToBindTo.user.tag + `**.\nThis will allow them to use ${properName} for **one** group.\nPlease give them this key: **${newKey}**`)
   
   
-  } else if(message.guild.id === "875553369266204702"){
+  } else if(message.guild.id === "896793514287972404"){
 
-  for (let productName in client.config.products_ghostly) {
+  for (let productName in client.config.products_Asilllian) {
     productsToList.push("`" + productName + "`")
   }
   
@@ -61,7 +61,7 @@ exports.run = async (client, message, args, level) => {// eslint-disable-line no
   message.channel.send(client.config.emotes.accept + " Alright, generated a key for **" + memberToBindTo.user.tag + `**.\nThis will allow them to use ${properName} for **one** group.\nPlease give them this key: **${newKey}**`)
   
   
-  } else if(message.guild.id === "no"){
+  } else if(message.guild.id === "896793514287972404"){
 
   for (let productName in client.config.products_studios) {
     productsToList.push("`" + productName + "`")

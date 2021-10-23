@@ -41,11 +41,12 @@ var config = {
   ownerId: "240639333567168512",
   
   // productName: id
-  products_ghostly: {
-  afghanistan: {name: "afghanistan"}
+  products_Asilllian: {
+  SCP_Bundle: {name: "SCP Bundle"}, //NO REPLACE GHOSTY
+  PlayersListLeader
   },
   
-  products_studios: {
+  products_ghostly: {
     productnamehere: { name: "producthere" },
   },
   
