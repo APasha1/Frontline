@@ -9,7 +9,7 @@ function sleep(delay) {
 
 exports.run = async (client, message, args, level) => {
   // eslint-disable-line no-unused-vars
-
+  if (message.guild.id === "858428376233541633") {
       const check = fetch(`https://api.blox.link/v1/user/${message.author.id}`)
         .then(res => res.json())
         .then(json => {
@@ -33,7 +33,9 @@ exports.run = async (client, message, args, level) => {
               return message.channel.send(
                 "You are not verified with BloxLink, please run `!verify`"
               );
-            }
+            };
+          
+        
 
   
   
@@ -119,6 +121,8 @@ exports.run = async (client, message, args, level) => {
             
           });
         });
+    
+  }
 };
 
 exports.conf = {
