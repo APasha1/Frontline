@@ -4,6 +4,10 @@ const roblox = require("noblox");
 
 
 exports.run = async (client, message, args, level) => { 
+if(args[0] === "asilllian"){
+const data = client.getData("asillliancount")
+message.channel.send("I have been generated " + data.count + "keys for **Asillian**")
+}
 
 }
 
@@ -16,8 +20,8 @@ exports.conf = {
 };
 
 exports.help = {
-  name: "valueofkey",
+  name: "num",
   category: "Owner",
-  description: "debug cmd",
-  usage: "valueofkey"
+  description: "cmd",
+  usage: "num"
 };
