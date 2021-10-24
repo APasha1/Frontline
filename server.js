@@ -371,7 +371,7 @@ const startup = async () => {
 
 // Discord bot events
 client.on("ready", async () => {
-
+  
 });
 
 

@@ -6,7 +6,8 @@ const roblox = require("noblox");
 exports.run = async (client, message, args, level) => { 
 if(args[0] === "asilllian"){
 const data = await client.getData("asillliancount");
-message.channel.send("I have been generated " + data.count + "keys for **Asillian**")
+  console.log(data)
+message.channel.send("I have been generated " + data.count + " keys for **Asillian**")
 }
 
 }

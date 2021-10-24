@@ -79,9 +79,10 @@ exports.run = async (client, message, args, level) => {// eslint-disable-line no
     product: product
   }
   
-const data = await client.getData("asillliancount");
-  let asilllianCount = {
-    count: data + 1
+const data = await client.getData("asillliancount") || 1
+ console.log(data.count + 1)
+let asilllianCount = {
+    count: data.count + 1
   }
   client.setData("asillliancount", asilllianCount);
   client.setData(newKey, keyToUserFormat)
