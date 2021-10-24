@@ -43,12 +43,12 @@ var config = {
   // productName: id
   products_Asilllian: {
   scpbundle: {name: "SCPBundle"}, 
-  playerslistleaderboard: { name: "PlayersListLeaderboard" },
-  ranktagv2: { name: "RankTagV2" },
-  simplemenugui: { name: "SimpleMenuGUI" },
-  shopgui: { name: "ShopGUI"},
-  announcementssystem: { name: "AnnouncementsSystem" },
-  ranktagv1: { name: "RankTagV1" }
+  playerslistleaderboard: {name: "PlayersListLeaderboard"},
+  ranktagv2: {name: "RankTagV2"},
+  simplemenugui: {name: "SimpleMenuGUI"},
+  shopgui: {name: "ShopGUI"},
+  announcementssystem: {name: "AnnouncementsSystem"},
+  ranktagv1: {name: "RankTagV1"}
   },
   
   products_ghostly: {

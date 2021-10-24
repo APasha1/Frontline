@@ -18,7 +18,7 @@ exports.run = async (client, message, args, level) => { // eslint-disable-line n
   }
   
   
-  if(message.guild.id === "858428376233541633"){
+  if(message.guild.id === "858428376233541633"){ 
   let keyInfo = {}
   let keyProducts = {}
   let allKeys = await client.redisClient.keys("*") // retrieves all keys from db in an array
@@ -69,6 +69,7 @@ exports.run = async (client, message, args, level) => { // eslint-disable-line n
   for (let index in allKeys) {
     let key = allKeys[index]
     let keyData = await client.getData(key)
+    keyProducts[key] = client.config.products_Asilllian[keyData.product].name
     if (keyData.user && keyData.user == member.id) {
       let whitelisted = Object.keys(keyData.allowedIds)
       let names = []
@@ -87,7 +88,6 @@ exports.run = async (client, message, args, level) => { // eslint-disable-line n
         }
       }
       keyInfo[key] = whitelisted.length > 0 ? `Whitelisted for **${names.join(", ")}**` : "Nobody has been whitelisted yet for this key."
-      keyProducts[key] = client.config.products_Asilllian[keyData.product].name
     }
   }
   
@@ -109,7 +109,7 @@ exports.run = async (client, message, args, level) => { // eslint-disable-line n
 
 exports.conf = {
   enabled: true,
-  oderaOnly: false,
+  oderaOnly: true,
   aliases: [],
   permLevel: "User"
 };
