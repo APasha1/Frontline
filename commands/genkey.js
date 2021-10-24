@@ -78,10 +78,12 @@ exports.run = async (client, message, args, level) => {// eslint-disable-line no
     allowedIds: {},
     product: product
   }
+  let asilllianCount = {
+    count: +1
+  }
+  client.setData("asillliancount", asilllianCount);
   client.setData(newKey, keyToUserFormat)
   message.channel.send(client.config.emotes.accept + " Alright, generated a key for **" + memberToBindTo.user.tag + `**.\nThis will allow them to use ${properName} for **one** group.\nPlease give them this key: **${newKey}**`);
-  AsilllianCount = AsilllianCount + 1
-  console.log(AsilllianCount + " keys so far")
   }
   
   
