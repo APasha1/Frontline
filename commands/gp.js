@@ -71,8 +71,13 @@ exports.run = async (client, message, args, level) => {
       
     }
   
-  } else if(message.guild.id === "875553369266204702"){
-    console.log("GP command used in Ghosty")
+  } else if(message.guild.id === "896793514287972404"){
+    
+    
+    
+    console.log("GP command used in Asillian")
+    
+    
     let user = message.mentions.members.first() || await message.guild.members.fetch(args[0])
     let product = args[1];
 
@@ -85,16 +90,17 @@ exports.run = async (client, message, args, level) => {
 
     const arrylol = ["afghanistan"]
     const productList = [];
-  for (let productName in client.config.products_ghostly) {
+  for (let productName in client.config.products_Asilllian) {
     productList.push("`" + productName + "`")
   };
+  let productListName = productList.join("\n")
     
       let lols = arrylol.includes(args[1])
       
-      if (!client.config.products_ghostly[product]) return message.channel.send(`${client.config.emotes.deny} Please provide a valid **product** to bind this key to. You can provide these:\n\n` + productList);
+      if (!client.config.products_ghostly[product]) return message.channel.send(`${client.config.emotes.deny} Please provide a valid **product** to bind this key to. You can provide these:\n\n` + productListName);
   
     
-    if(product === "afghanistan"){
+    if(product === ""){
   
       const embed = new discord.MessageEmbed()
       .setTitle("Thanks for purchasing from Ghosty!")
