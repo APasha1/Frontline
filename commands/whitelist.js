@@ -122,7 +122,10 @@ exports.run = async (client, message, args, level) => {
           });
         });
     
-  }//STOP I AM WATCHIG U I WILL CHANGE THIS SOON
+  }else if(message.guild.id === "896793514287972404"){ //STOP I AM WATCHIG U I WILL CHANGE THIS SOON
+    
+    
+  }
 };
 
 exports.conf = {

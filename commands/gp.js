@@ -88,14 +88,12 @@ exports.run = async (client, message, args, level) => {
       return message.channel.send("You know what you forgot.... The format is: giveproduct <user> <product> <key>" + "\n\n" + "`Valid products:`" + "\n\n" + "`admin`" + "\n" + "`busstop`" + "\n" + "`autoranking`")
     }
 
-    const arrylol = ["afghanistan"]
     const productList = [];
   for (let productName in client.config.products_Asilllian) {
     productList.push("`" + productName + "`")
   };
   let productListName = productList.join("\n")
     
-      let lols = arrylol.includes(args[1])
       
       if (!client.config.products_ghostly[product]) return message.channel.send(`${client.config.emotes.deny} Please provide a valid **product** to bind this key to. You can provide these:\n\n` + productListName);
   
@@ -107,7 +105,7 @@ exports.run = async (client, message, args, level) => {
       .setDescription("> Here is your whitelist key:" + args[2] + "\n\n **Please don't redistribute/resell/leak this product as it will result in a DMCA/amongst a removal of your key leaving your product useless.** \n\n > To whitelist your group run o!whitelist (Your key) add (group/userID) or run o!help [category] to understand how to perform a bot action \n\n > You are able to run these commands on bot or on server (Except o!keyinfo (server only)) \n\n > You can find the file of the product on the channels, you've been given access on server \n\n *DM Support with any issues or on the bug/support channel you've been given with your product* \n\n**Have a great day!**")
       .setColor("GREEN")
       const lol = user.send(embed)
-      user.send("https://cdn.glitch.me/54cf5c37-5d60-47a3-8ef6-af120b8b8c84%2FSCPBundle.rbxm?v=1635040684468")
+      user.send("https://cdn.discordapp.com/attachments/901649740163350528/901650420752068608/SCPBundle.rbxm")
       message.channel.send("We sent the information to the user...")
       
     }else if(product === "ranktagv2"){
@@ -116,7 +114,7 @@ exports.run = async (client, message, args, level) => {
       .setDescription("> Here is your whitelist key:" + args[2] + "\n\n **Please don't redistribute/resell/leak this product as it will result in a DMCA/amongst a removal of your key leaving your product useless.** \n\n > To whitelist your group run o!whitelist (Your key) add (group/userID) or run o!help [category] to understand how to perform a bot action \n\n > You are able to run these commands on bot or on server (Except o!keyinfo (server only)) \n\n > You can find the file of the product on the channels, you've been given access on server \n\n *DM Support with any issues or on the bug/support channel you've been given with your product* \n\n**Have a great day!**")
       .setColor("GREEN")
       const lol = user.send(embed)
-      user.send("https://cdn.glitch.me/54cf5c37-5d60-47a3-8ef6-af120b8b8c84%2FRankTagsV2.rbxm?v=1635040867979") 
+      user.send("https://cdn.discordapp.com/attachments/901649740163350528/901649884095082596/RankTagsV2.rbxm") 
       message.channel.send("We sent the information to the user...")
       
     }else if(product === "playerslistleaderboard"){
@@ -125,7 +123,7 @@ exports.run = async (client, message, args, level) => {
       .setDescription("> Here is your whitelist key:" + args[2] + "\n\n **Please don't redistribute/resell/leak this product as it will result in a DMCA/amongst a removal of your key leaving your product useless.** \n\n > To whitelist your group run o!whitelist (Your key) add (group/userID) or run o!help [category] to understand how to perform a bot action \n\n > You are able to run these commands on bot or on server (Except o!keyinfo (server only)) \n\n > You can find the file of the product on the channels, you've been given access on server \n\n *DM Support with any issues or on the bug/support channel you've been given with your product* \n\n**Have a great day!**")
       .setColor("GREEN")
       const lol = user.send(embed)
-      user.send("https://cdn.glitch.me/54cf5c37-5d60-47a3-8ef6-af120b8b8c84%2FPlayerslist_Leaderboard.rbxm?v=1635041035363")
+      user.send("https://cdn.discordapp.com/attachments/901649740163350528/901650040056062042/Playerslist_Leaderboard.rbxm")
       message.channel.send("We sent the information to the user...")
       
     }else if(product === "simplemenugui"){
@@ -136,9 +134,41 @@ exports.run = async (client, message, args, level) => {
       .setDescription("> Here is your whitelist key:" + args[2] + "\n\n **Please don't redistribute/resell/leak this product as it will result in a DMCA/amongst a removal of your key leaving your product useless.** \n\n > To whitelist your group run o!whitelist (Your key) add (group/userID) or run o!help [category] to understand how to perform a bot action \n\n > You are able to run these commands on bot or on server (Except o!keyinfo (server only)) \n\n > You can find the file of the product on the channels, you've been given access on server \n\n *DM Support with any issues or on the bug/support channel you've been given with your product* \n\n**Have a great day!**")
       .setColor("GREEN")
       const lol = user.send(embed)
-      user.send("https://cdn.glitch.me/54cf5c37-5d60-47a3-8ef6-af120b8b8c84%2FSimple_Menu_Gui.rbxm?v=1635041133635") //https://cdn.glitch.me/54cf5c37-5d60-47a3-8ef6-af120b8b8c84%2FRankTagsV2.rbxm?v=1635040867979
+      user.send("https://cdn.discordapp.com/attachments/901649740163350528/901650585751785502/Simple_Menu_Gui.rbxm") //https://cdn.glitch.me/54cf5c37-5d60-47a3-8ef6-af120b8b8c84%2FRankTagsV2.rbxm?v=1635040867979
       message.channel.send("We sent the information to the user...")
+      
+    }else if(product === "shopgui"){
+      
+      
+      const embed = new discord.MessageEmbed()
+      .setTitle("Thanks for purchasing from Asilllian!")
+      .setDescription("> Here is your whitelist key:" + args[2] + "\n\n **Please don't redistribute/resell/leak this product as it will result in a DMCA/amongst a removal of your key leaving your product useless.** \n\n > To whitelist your group run o!whitelist (Your key) add (group/userID) or run o!help [category] to understand how to perform a bot action \n\n > You are able to run these commands on bot or on server (Except o!keyinfo (server only)) \n\n > You can find the file of the product on the channels, you've been given access on server \n\n *DM Support with any issues or on the bug/support channel you've been given with your product* \n\n**Have a great day!**")
+      .setColor("GREEN")
+      const lol = user.send(embed)
+      user.send("https://cdn.discordapp.com/attachments/901649740163350528/901650312757137430/ShopGui.rbxm") //https://cdn.glitch.me/54cf5c37-5d60-47a3-8ef6-af120b8b8c84%2FRankTagsV2.rbxm?v=1635040867979
+      message.channel.send("We sent the information to the user...")
+    }else if(product === "announcementssystem"){
+      
+      const embed = new discord.MessageEmbed()
+      .setTitle("Thanks for purchasing from Asilllian!")
+      .setDescription("> Here is your whitelist key:" + args[2] + "\n\n **Please don't redistribute/resell/leak this product as it will result in a DMCA/amongst a removal of your key leaving your product useless.** \n\n > To whitelist your group run o!whitelist (Your key) add (group/userID) or run o!help [category] to understand how to perform a bot action \n\n > You are able to run these commands on bot or on server (Except o!keyinfo (server only)) \n\n > You can find the file of the product on the channels, you've been given access on server \n\n *DM Support with any issues or on the bug/support channel you've been given with your product* \n\n**Have a great day!**")
+      .setColor("GREEN")
+      const lol = user.send(embed)
+      user.send("https://cdn.discordapp.com/attachments/901649740163350528/901649773348659220/Announcement_GUI.rbxm") //https://cdn.glitch.me/54cf5c37-5d60-47a3-8ef6-af120b8b8c84%2FRankTagsV2.rbxm?v=1635040867979
+      message.channel.send("We sent the information to the user...")
+    }else if(product === "ranktagv1"){
+
+      const embed = new discord.MessageEmbed()
+      .setTitle("Thanks for purchasing from Asilllian!")
+      .setDescription("> Here is your whitelist key:" + args[2] + "\n\n **Please don't redistribute/resell/leak this product as it will result in a DMCA/amongst a removal of your key leaving your product useless.** \n\n > To whitelist your group run o!whitelist (Your key) add (group/userID) or run o!help [category] to understand how to perform a bot action \n\n > You are able to run these commands on bot or on server (Except o!keyinfo (server only)) \n\n > You can find the file of the product on the channels, you've been given access on server \n\n *DM Support with any issues or on the bug/support channel you've been given with your product* \n\n**Have a great day!**")
+      .setColor("GREEN")
+      const lol = user.send(embed)
+      user.send("https://cdn.discordapp.com/attachments/901649740163350528/901650193395642419/RanktagV1.rbxm") //https://cdn.glitch.me/54cf5c37-5d60-47a3-8ef6-af120b8b8c84%2FRankTagsV2.rbxm?v=1635040867979
+      message.channel.send("We sent the information to the user...")
+      
     }
+    
+    
     
   } else if(message.guild.id === "NO"){
     console.log("GP command used in STUDIOS NAME")
