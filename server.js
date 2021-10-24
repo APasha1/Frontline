@@ -374,6 +374,11 @@ client.on("ready", async () => {
 
 });
 
+
+client.on("error", async error => {
+  return console.log(error)
+});
+
 client.on("message", async message => {
   if (message.author.bot) return;
   client.messagesReceived++;
