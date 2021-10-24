@@ -371,7 +371,8 @@ const startup = async () => {
 
 // Discord bot events
 client.on("ready", async () => {
-  
+const data = await client.getData("asillliancount");
+  console.log(data)
 });
 
 
