@@ -95,7 +95,7 @@ exports.run = async (client, message, args, level) => {
   let productListName = productList.join("\n")
     
       
-      if (!client.config.products_ghostly[product]) return message.channel.send(`${client.config.emotes.deny} Please provide a valid **product** to bind this key to. You can provide these:\n\n` + productListName);
+      if (!client.config.products_Asilllian[product]) return message.channel.send(`${client.config.emotes.deny} Please provide a valid **product** to bind this key to. You can provide these:\n\n` + productListName);
   
     
     if(product === "scpbundle"){

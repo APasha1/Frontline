@@ -42,13 +42,13 @@ var config = {
   
   // productName: id
   products_Asilllian: {
-  scpbundle: {name: "Asillian - SCP Bundle"}, 
-  playerslistleaderboard: {name: "Asillian - Players List Leaderboard"},
-  ranktagv2: {name: "Asillian - Rank Tag V2"},
-  simplemenugui: {name: "Asillian - Simple Menu GUI"},
-  shopgui: {name: "Asillian - Shop GUI"},
-  announcementssystem: {name: "Asillian - Announcements System"},
-  ranktagv1: {name: "Asillian - Rank Tag V1"}
+  scpbundle: {name: "Asilllian - SCP Bundle"}, 
+  playerslistleaderboard: {name: "Asilllian - Players List Leaderboard"},
+  ranktagv2: {name: "Asilllian - Rank Tag V2"},
+  simplemenugui: {name: "Asilllian - Simple Menu GUI"},
+  shopgui: {name: "Asilllian - Shop GUI"},
+  announcementssystem: {name: "Asilllian - Announcements System"},
+  ranktagv1: {name: "Asilllian - Rank Tag V1"}
   },
   
   products_ghostly: {
@@ -56,10 +56,10 @@ var config = {
   },
   
   products: {
-    autoranking: {name: "Odera Autoranking"},
-    admin: {name: "Odera Admin Basics"},
-    busstop: {name: "Odera Bus Stop System"},
-    sidemenu: {name: "Side-Menu"} 
+    autoranking: {name: "Odera - Autoranking"},
+    admin: {name: "Odera - Admin Basics"},
+    busstop: {name: "Odera - Bus Stop System"},
+    sidemenu: {name: "Odera - Side Menu"} 
   },
   
   

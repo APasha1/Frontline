@@ -43,8 +43,10 @@ exports.run = async (client, message, args, level) => { // eslint-disable-line n
         }
       }
       keyInfo[key] = whitelisted.length > 0 ? `Whitelisted for **${names.join(", ")}**` : "Nobody has been whitelisted yet for this key."
-      console.log(client.config.products[keyData.product] || client.config.products_Asilllian[keyData.product])
-      keyProducts[key] = client.config.products[keyData.product].name
+      let keylool = client.config.products[keyData.product] || client.config.products_Asilllian[keyData.product]
+      console.log(keylool)
+      console.log(keylool.name)
+      keyProducts[key] = keylool.name
       
     }
   }
@@ -58,6 +60,7 @@ exports.run = async (client, message, args, level) => { // eslint-disable-line n
   if (Object.keys(keyInfo).length == 0) embed.setDescription("This user doesn't have any keys!")
   embed.setTimestamp()
   embed.setFooter("Made by megu#6644")
+  console.log(embed)
   
   if (message.channel.type != "dm") message.channel.send(`${client.config.emotes.accept} Check your DMs!`)
   message.author.send({embed})
