@@ -394,7 +394,7 @@ client.on("message", async message => {
 
   let isCommand = content.indexOf(config.prefix) == 0;
 
-  // Command detections
+1  // Command detections
   if (isCommand) {
     if(message.guild){
     if(message.guild.id === "875553369266204702"){
