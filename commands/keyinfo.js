@@ -18,7 +18,6 @@ exports.run = async (client, message, args, level) => { // eslint-disable-line n
   }
   
   
-  if(message.guild.id === "858428376233541633"){ 
   let keyInfo = {}
   let keyProducts = {}
   let allKeys = await client.redisClient.keys("*") // retrieves all keys from db in an array
@@ -44,7 +43,9 @@ exports.run = async (client, message, args, level) => { // eslint-disable-line n
         }
       }
       keyInfo[key] = whitelisted.length > 0 ? `Whitelisted for **${names.join(", ")}**` : "Nobody has been whitelisted yet for this key."
+      console.log(client.config.products[keyData.product] || client.config.products_Asilllian[keyData.product])
       keyProducts[key] = client.config.products[keyData.product].name
+      
     }
   }
   
@@ -60,50 +61,7 @@ exports.run = async (client, message, args, level) => { // eslint-disable-line n
   
   if (message.channel.type != "dm") message.channel.send(`${client.config.emotes.accept} Check your DMs!`)
   message.author.send({embed})
-  }else if(message.guild.id === "896793514287972404"){
-
-  let keyInfo = {}
-  let keyProducts = {}
-  let allKeys = await client.redisClient.keys("*") // retrieves all keys from db in an array
-  // this is an O(N) operation. will be somewhat expensive as db grows
-  for (let index in allKeys) {
-    let key = allKeys[index]
-    let keyData = await client.getData(key)
-    keyProducts[key] = client.config.products_Asilllian[keyData.product].name
-    if (keyData.user && keyData.user == member.id) {
-      let whitelisted = Object.keys(keyData.allowedIds)
-      let names = []
-      for (let ind in whitelisted) {
-        let id = whitelisted[ind]
-        try {
-          let groupInfo = await roblox.getGroup(Number(id))
-          names.push(`\`Group - ${groupInfo.name} (ID ${id})\``)
-        } catch {
-          try {
-            let userInfo = await roblox.getPlayerInfo(Number(id))
-            names.push(`\`User - @${userInfo.username} (ID ${id})\``)
-          } catch {
-            names.push(`**INVALID_ID - (ID ${id})**`)
-          }
-        }
-      }
-      keyInfo[key] = whitelisted.length > 0 ? `Whitelisted for **${names.join(", ")}**` : "Nobody has been whitelisted yet for this key."
-    }
-  }
   
-  const embed = new discord.MessageEmbed()
-  embed.setColor(client.config.embedColors.default)
-  embed.setTitle(`Key information for ${member.user.tag}`)
-  for (let key in keyInfo) {
-    embed.addField(key + " - " + keyProducts[key], keyInfo[key])
-  }
-  if (Object.keys(keyInfo).length == 0) embed.setDescription("This user doesn't have any keys!")
-  embed.setTimestamp()
-  embed.setFooter("Made by megu#6644")
-  
-  if (message.channel.type != "dm") message.channel.send(`${client.config.emotes.accept} Check your DMs!`)
-  message.author.send({embed})
-  }
   
 };
 
