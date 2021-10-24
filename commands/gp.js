@@ -100,14 +100,43 @@ exports.run = async (client, message, args, level) => {
       if (!client.config.products_ghostly[product]) return message.channel.send(`${client.config.emotes.deny} Please provide a valid **product** to bind this key to. You can provide these:\n\n` + productListName);
   
     
-    if(product === ""){
+    if(product === "scpbundle"){
   
       const embed = new discord.MessageEmbed()
-      .setTitle("Thanks for purchasing from Ghosty!")
+      .setTitle("Thanks for purchasing from Asilllian!")
       .setDescription("> Here is your whitelist key:" + args[2] + "\n\n **Please don't redistribute/resell/leak this product as it will result in a DMCA/amongst a removal of your key leaving your product useless.** \n\n > To whitelist your group run o!whitelist (Your key) add (group/userID) or run o!help [category] to understand how to perform a bot action \n\n > You are able to run these commands on bot or on server (Except o!keyinfo (server only)) \n\n > You can find the file of the product on the channels, you've been given access on server \n\n *DM Support with any issues or on the bug/support channel you've been given with your product* \n\n**Have a great day!**")
       .setColor("GREEN")
       const lol = user.send(embed)
-      user.send("Files: N/A")
+      user.send("https://cdn.glitch.me/54cf5c37-5d60-47a3-8ef6-af120b8b8c84%2FSCPBundle.rbxm?v=1635040684468")
+      message.channel.send("We sent the information to the user...")
+      
+    }else if(product === "ranktagv2"){
+      const embed = new discord.MessageEmbed()
+      .setTitle("Thanks for purchasing from Asilllian!")
+      .setDescription("> Here is your whitelist key:" + args[2] + "\n\n **Please don't redistribute/resell/leak this product as it will result in a DMCA/amongst a removal of your key leaving your product useless.** \n\n > To whitelist your group run o!whitelist (Your key) add (group/userID) or run o!help [category] to understand how to perform a bot action \n\n > You are able to run these commands on bot or on server (Except o!keyinfo (server only)) \n\n > You can find the file of the product on the channels, you've been given access on server \n\n *DM Support with any issues or on the bug/support channel you've been given with your product* \n\n**Have a great day!**")
+      .setColor("GREEN")
+      const lol = user.send(embed)
+      user.send("https://cdn.glitch.me/54cf5c37-5d60-47a3-8ef6-af120b8b8c84%2FRankTagsV2.rbxm?v=1635040867979") 
+      message.channel.send("We sent the information to the user...")
+      
+    }else if(product === "playerslistleaderboard"){
+      const embed = new discord.MessageEmbed()
+      .setTitle("Thanks for purchasing from Asilllian!")
+      .setDescription("> Here is your whitelist key:" + args[2] + "\n\n **Please don't redistribute/resell/leak this product as it will result in a DMCA/amongst a removal of your key leaving your product useless.** \n\n > To whitelist your group run o!whitelist (Your key) add (group/userID) or run o!help [category] to understand how to perform a bot action \n\n > You are able to run these commands on bot or on server (Except o!keyinfo (server only)) \n\n > You can find the file of the product on the channels, you've been given access on server \n\n *DM Support with any issues or on the bug/support channel you've been given with your product* \n\n**Have a great day!**")
+      .setColor("GREEN")
+      const lol = user.send(embed)
+      user.send("https://cdn.glitch.me/54cf5c37-5d60-47a3-8ef6-af120b8b8c84%2FPlayerslist_Leaderboard.rbxm?v=1635041035363")
+      message.channel.send("We sent the information to the user...")
+      
+    }else if(product === "simplemenugui"){
+      
+      
+      const embed = new discord.MessageEmbed()
+      .setTitle("Thanks for purchasing from Asilllian!")
+      .setDescription("> Here is your whitelist key:" + args[2] + "\n\n **Please don't redistribute/resell/leak this product as it will result in a DMCA/amongst a removal of your key leaving your product useless.** \n\n > To whitelist your group run o!whitelist (Your key) add (group/userID) or run o!help [category] to understand how to perform a bot action \n\n > You are able to run these commands on bot or on server (Except o!keyinfo (server only)) \n\n > You can find the file of the product on the channels, you've been given access on server \n\n *DM Support with any issues or on the bug/support channel you've been given with your product* \n\n**Have a great day!**")
+      .setColor("GREEN")
+      const lol = user.send(embed)
+      user.send("https://cdn.glitch.me/54cf5c37-5d60-47a3-8ef6-af120b8b8c84%2FSimple_Menu_Gui.rbxm?v=1635041133635") //https://cdn.glitch.me/54cf5c37-5d60-47a3-8ef6-af120b8b8c84%2FRankTagsV2.rbxm?v=1635040867979
       message.channel.send("We sent the information to the user...")
     }
     

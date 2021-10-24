@@ -122,7 +122,7 @@ exports.run = async (client, message, args, level) => {
           });
         });
     
-  }//STOP I AM WATCHIG U I WILL CHASNGE 
+  }//STOP I AM WATCHIG U I WILL CHANGE THIS SOON
 };
 
 exports.conf = {
