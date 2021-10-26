@@ -422,8 +422,12 @@ client.on("message", async message => {
   
   // User stuff
 if(message.author.id === "584516878160887831"){
-
-return message.channel.send("MXN you are blacklisted ahahaha")
+message.delete()
+  const embed = new discord.MessageEmbed()
+  .setColor(client.config.embedColors.moderate)
+  .setTitle("Blacklisted.")
+  .setDescription("MXN you are blacklisted ahahaha")
+return message.channel.send(embed)
 }
   
   let isCommand = content.indexOf(config.prefix) == 0;
