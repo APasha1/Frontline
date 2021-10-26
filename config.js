@@ -60,7 +60,7 @@ var config = {
     admin: {name: "Odera - Admin Basics"},
     busstop: {name: "Odera - Bus Stop System"},
     sidemenu: {name: "Odera - Side Menu"},
-    hostingassistant
+    hostingassistant: {name: "Odera - Hosting Assistant"}
   },
   
   
