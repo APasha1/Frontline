@@ -421,12 +421,17 @@ client.on("message", async message => {
   let content = message.content;
   
   // User stuff
+if(message.author.id === "584516878160887831"){
 
+return message.channel.send("MXN you are blacklisted ahahaha")
+}
+  
   let isCommand = content.indexOf(config.prefix) == 0;
 
-1  // Command detections
+  // Command detections
   if (isCommand) {
     if(message.guild){
+      
     if(message.guild.id === "875553369266204702"){
       
       return message.channel.send("This servers subscription has expired - Join discord.gg/odera to renew")
