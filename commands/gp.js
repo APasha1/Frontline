@@ -83,11 +83,8 @@ exports.run = async (client, message, args, level) => {
 
     if(!args[0]){
       return message.channel.send("You know what you forgot.... The format is: giveproduct <user> <product> <key>")
-    }
-    if(!args[1]){
-      return message.channel.send("You know what you forgot.... The format is: giveproduct <user> <product> <key>" + "\n\n" + "`Valid products:`" + "\n\n" + "`admin`" + "\n" + "`busstop`" + "\n" + "`autoranking`")
-    }
-
+}    
+    
     const productList = [];
   for (let productName in client.config.products_Asilllian) {
     productList.push("`" + productName + "`")
