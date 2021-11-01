@@ -9,7 +9,7 @@ function sleep(delay) {
 
 exports.run = async (client, message, args, level) => {
   // eslint-disable-line no-unused-vars
-  if (message.guild.id === "858428376233541633") {
+  if (message.guild.id === "85842837623354
       const check = fetch(`https://api.blox.link/v1/user/${message.author.id}`)
         .then(res => res.json())
         .then(json => {
