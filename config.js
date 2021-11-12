@@ -41,7 +41,7 @@ var config = {
   ownerId: "240639333567168512",
   
   // productName: id
-  products_Asilllian: {
+  products_Asilllian: { // -- Cancel this when possible
   scpbundle: {name: "Asilllian - SCP Bundle"}, 
   playerslistleaderboard: {name: "Asilllian - Players List Leaderboard"},
   ranktagv2: {name: "Asilllian - Rank Tag V2"},
