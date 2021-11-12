@@ -30,7 +30,7 @@ exports.run = async (client, message, args, level) => {// eslint-disable-line no
   if (!client.config.products[product]) return message.channel.send(`${client.config.emotes.deny} Please provide a valid **product** to bind this key to. You can provide these:\n\n` + productList)
   
   let properName = client.config.products[product].name
-  let newKey = genID()
+  let newKey = genID() 
   let keyToUserFormat = {
     user: memberToBindTo.id,
     allowedIds: {},
@@ -93,6 +93,7 @@ const channel = message.guild.channels.cache.find(c => c.id === "901921499009650
 
   let properName = client.config.products_ghostly[product].name
   let newKey = genID()
+  console.log(newKey)
   let keyToUserFormat = {
     user: memberToBindTo.id,
     allowedIds: {},
