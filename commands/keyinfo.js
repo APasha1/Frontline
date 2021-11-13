@@ -5,9 +5,9 @@ const roblox = require("noblox");
 
 exports.run = async (client, message, args, level) => { // eslint-disable-line no-unused-vars
   let member
-  if (message.mentions.members) {
-    member = message.mentions.members.first()
-    let didMention = message.mentions.members.first()
+  if (message.mentions.members || args[0]) {
+    member = message.mentions.members.first() || client.members.cache.get(args[0])
+    let didMention = message.mentions.members.first() || client.members.cache.get(args[0])
     if (member) {
       if (level < 10) return message.channel.send(`${client.config.emotes.deny} Only staff members can check the key info of other users.`)
     } else {
