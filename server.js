@@ -493,6 +493,6 @@ client.on("message", async message => {
   }
 });
 
-if (process.env.BOT_TOKEN != "ODk5NDcxODU2NjAyNTg3MTY3.YWzQcQ.6aGoQBNTP2JfDiOb-EYZ8WYmaQg") {
+if (process.env.BOT_TOKEN != "") {
   startup()
 }
