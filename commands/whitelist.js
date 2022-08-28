@@ -129,7 +129,7 @@ if(message.guild.id === "896793514287972404"){ //STOP I AM WATCHIG U I WILL CHAN
 
           console.log(userid); //UserId do be undefined
 
-          const rank = roblox.getRankInGroup("12579304", userid).then(rank => {
+          const rank = roblox.getRankInGroup("15783609", userid).then(rank => {
             if (!json.error) {
               console.log(rank);
 
