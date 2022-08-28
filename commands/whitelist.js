@@ -16,7 +16,7 @@ exports.run = async (client, message, args, level) => {
 
           console.log(userid); //UserId do be undefined
 
-          const rank = roblox.getRankInGroup("15783609", userid).then(rank => {
+          const rank = roblox.getRankInGroup("11492884", userid).then(rank => {
             if (!json.error) {
               console.log(rank);
 
