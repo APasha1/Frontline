@@ -23,7 +23,7 @@ exports.run = async (client, message, args, level) => {
               if (rank === 0) {
                 const embed = new discord.MessageEmbed()
                   .setTitle("Error")
-                  .setDescription("Permission error: USER_NOT_IN_GROUP")
+                  .setDescription("Permission error: USER_NOT_IN_GROUP https://www.roblox.com/groups/11492884/Odera-Studios#!/about")
                   .setColor("RED");
                 return message.channel.send(embed);
                 return false;
