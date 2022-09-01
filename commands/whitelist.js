@@ -9,7 +9,7 @@ function sleep(delay) {
 
 exports.run = async (client, message, args, level) => {
   // eslint-disable-line no-unused-vars 
-      const check = fetch('https://v3.blox.link/developer/discord/' + message.author.id (message.guild ? + "?guildId=" + message.guild.id), {
+      const check = fetch('https://v3.blox.link/developer/discord/' + message.author.id + (message.guild ? "?guildId=" + message.guild.id : ''), {
       headers: { "api-key": "903afa40-f829-4c71-babd-c32d32151aef" } })
         .then(res => res.json())
         .then(json => {

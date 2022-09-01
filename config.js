@@ -74,10 +74,10 @@ var config = {
   },
   
   emotes: {
-    accept: "<a:accepted:900147426470539295>", //what are u doing noob shush
-    deny: "<a:denied:900148639639408700>",
-    maybe: "<a:maybe:868335596567928842>",
-    loading: "<a:loading:868335596362399784>",
+    accept: "<a:accepted:943283233687224421>", //what are u doing noob shush
+    deny: "<a:denied:943283233985032275>",
+    maybe: "<a:maybe:943283234001809448>",
+    loading: "<a:loading:943283233234255992>",
   },
   
   
