@@ -1,4 +1,5 @@
 const discord = require("discord.js");
+
 let AsilllianCount = 0
 function genID() {
   var d = new Date().getTime();
@@ -19,7 +20,7 @@ exports.run = async (client, message, args, level) => {// eslint-disable-line no
   let productsToList = []
   
   
-  if(message.guild.id === "858428376233541633"){
+  if(message.guild.id === "1013112593092710561" || message.guild.id === "673563921180786688"){
   
   for (let productName in client.config.products) {
     productsToList.push("`" + productName + "`")
@@ -37,6 +38,19 @@ exports.run = async (client, message, args, level) => {// eslint-disable-line no
     product: product
   }
   client.setData(newKey, keyToUserFormat)
+    
+  const embed = new discord.MessageEmbed()
+  .setTitle("Thanks for purchasing from Odera Studios!")
+  .setDescription("> Here is your whitelist key:" + newKey + "\n\n **Please dont redistribute/resell/leak this product as it will result in a DMCA/amongst a removal of your key leaving your product useless.** \n\n > To whitelist your group run o!whitelist (Your key) add (group/userID) or run o!help [category] to understand how to perform a bot action \n\n > You are able to run these commands on bot or on server (Except o!keyinfo (server only)) \n\n > You can find the file of the product on the channels, you've been given access on server \n\n *DM Support with any issues or on the bug/support channel you've been given with your product* \n\n**Have a great day!**")
+  .setColor("GREEN")
+  
+    
+  memberToBindTo.send({ embed }).catch(async err =>  {
+    message.channel.send("Error: " + err)
+  })
+  memberToBindTo.send(client.config.products[product].link).catch(async err =>  {
+    message.channel.send("Error: " + err)
+  })
   message.channel.send(client.config.emotes.accept + " Alright, generated a key for **" + memberToBindTo.user.tag + `**.\nThis will allow them to use ${properName} for **one** group.\nPlease give them this key: **${newKey}**`)
   
 // no fedee, I am your father
