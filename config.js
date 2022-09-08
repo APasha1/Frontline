@@ -54,13 +54,13 @@ var config = {
   products_ghostly: {
     productnamehere: { name: "producthere" },
   },
-  
+    
   products: {
-    autoranking: {name: "Odera - Autoranking"},
-    admin: {name: "Odera - Admin Basics"},
-    busstop: {name: "Odera - Bus Stop System"},
-    sidemenu: {name: "Odera - Side Menu"},
-    hostingassistant: {name: "Odera - Hosting Assistant"}
+    autoranking: {name: "Odera - Autoranking", link: "https://odera.fede.center/Autoranking.rbxl" },
+    admin: {name: "Odera - Admin Basics", link: ""},
+    busstop: {name: "Odera - Bus Stop System", link: "https://odera.fede.center/OD_Busstop.rbxm"},
+    sidemenu: {name: "Odera - Side Menu", link: "https://odera.fede.center/SideGUI.rbxl"},
+    hostingassistant: {name: "Odera - Hosting Assistant", link: ""}
   },
   
   
