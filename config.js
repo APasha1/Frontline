@@ -17,7 +17,7 @@ var perms = {
     return [user.roles.cache.find(x => x.name.toLowerCase() == 'bot access'), 10, "Staff"]
   },
   Megu: (user) => {
-    return [user.id == "811042420174880768", 999, "Zoltan"]
+    return [user.id == "269256731672969216", 999, "Skyptx"]
   }
 }
 
@@ -38,7 +38,7 @@ var ranks = {
 
 var config = {
   prefix: "o!",
-  ownerId: "240639333567168512",
+  ownerId: "269256731672969216",
   
   // productName: id
   products_Asilllian: { // -- Cancel this when possible
