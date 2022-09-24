@@ -468,7 +468,7 @@ client.on("message", async message => {
           `you are not authorized to run this command, as it is for **${cmdRank}s** and above only.`
         );
       }
-      if (OderaOnly && channel.type == "dm") {
+      if (OderaOnly && !message.guild) {
         return message.reply("sorry, this command can only be run in a server.");
       }
       if (!cmdEnabled) {
