@@ -478,6 +478,7 @@ client.on("message", async message => {
     if (cmd) {
       client.commandsRan++;
       try {
+        if(!OderaOnly && !message.guild)
         cmd.run(client, message, args, permLevel);
       } catch (e) {
         message.reply(
