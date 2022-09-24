@@ -478,8 +478,11 @@ client.on("message", async message => {
     if (cmd) {
       client.commandsRan++;
       try {
-        if(!OderaOnly && !message.guild)
+        if(OderaOnly == false && !message.guild ||OderaOnly == false && message.guild || OderaOnly == true && message.guild){
         cmd.run(client, message, args, permLevel);
+        }else{
+         return message.reply("sorry, this command can only be run in a server.");
+        }
       } catch (e) {
         message.reply(
           `command \`${commandName}\` could not be executed due to an error: \`${e}\``
