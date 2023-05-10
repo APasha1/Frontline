@@ -1,6 +1,5 @@
 const discord = require("discord.js");
 
-let AsilllianCount = 0
 function genID() {
   var d = new Date().getTime();
   var d2 = d
@@ -19,9 +18,7 @@ exports.run = async (client, message, args, level) => {// eslint-disable-line no
   let product = args[1]
   let productsToList = []
   
-  
-  if(message.guild.id === "1013112593092710561" || message.guild.id === "673563921180786688"){
-  
+    
   for (let productName in client.config.products) {
     productsToList.push("`" + productName + "`")
   }
@@ -53,70 +50,7 @@ exports.run = async (client, message, args, level) => {// eslint-disable-line no
   })
   message.channel.send(client.config.emotes.accept + " Alright, generated a key for **" + memberToBindTo.user.tag + `**.\nThis will allow them to use ${properName} for **one** group.\nPlease give them this key: **${newKey}**`)
   
-// no fedee, I am your father
-  } else if(message.guild.id === "896793514287972404"){
-
-  for (let productName in client.config.products_Asilllian) {
-    productsToList.push("`" + productName + "`")
-  }
-  
-  let productList = productsToList.join("\n")
-  if (!memberToBindTo) return message.channel.send(`${client.config.emotes.deny} Please provide a user to generate a key for.`)
-  if (!client.config.products_Asilllian[product]) return message.channel.send(`${client.config.emotes.deny} Please provide a valid **product** to bind this key to. You can provide these:\n\n` + productList)
-  
-  let properName = client.config.products_Asilllian[product].name
-  let newKey = genID()
-  let keyToUserFormat = {
-    user: memberToBindTo.id,
-    allowedIds: {},
-    product: product
-  }
-  const data = await client.getData("asillliancount")
-  console.log(data)
-  const countsum = data.count + 1
-  console.log(countsum)
-  const datacount = {
-    count: countsum
-  }
-  console.log(datacount)
-  client.setData("asillliancount", datacount)
-  
-  const newembed = new discord.MessageEmbed()
-  .setColor(client.config.embedColors.notice)
-  .setTitle("New Key Genereated #" + countsum)
-  .setDescription("A new key was generated.")
-  .addField("Key Information", JSON.stringify(keyToUserFormat, null, 2), true)
-const channel = message.guild.channels.cache.find(c => c.id === "901921499009650789");
-    channel.send(newembed)
-  client.setData(newKey, keyToUserFormat)
-  message.channel.send(client.config.emotes.accept + " Alright, generated a key for **" + memberToBindTo.user.tag + `**.\nThis will allow them to use ${properName} for **one** group.\nPlease give them this key: **${newKey}**`)
-  
-  
-  } else if(message.guild.id === "896793514287972404"){
-
-  for (let productName in client.config.products_studios) {
-    productsToList.push("`" + productName + "`")
-  };
-  
-  let productList = productsToList.join("\n");
-  if (!memberToBindTo) return message.channel.send(`${client.config.emotes.deny} Please provide a user to generate a key for.`)
-  if (!client.config.products_ghostly[product]) return message.channel.send(`${client.config.emotes.deny} Please provide a valid **product** to bind this key to. You can provide these:\n\n` + productList);
-  
-
-  
-
-  let properName = client.config.products_ghostly[product].name
-  let newKey = genID()
-  console.log(newKey)
-  let keyToUserFormat = {
-    user: memberToBindTo.id,
-    allowedIds: {},
-    product: product
-  }
-  
-  client.setData(newKey, keyToUserFormat)
-  message.channel.send(client.config.emotes.accept + " Alright, generated a key for **" + memberToBindTo.user.tag + `**.\nThis will allow them to use ${properName} for **one** group.\nPlease give them this key: **${newKey}**`);
-  }
+// fedee, I am your father
   
   
   
@@ -124,7 +58,7 @@ const channel = message.guild.channels.cache.find(c => c.id === "901921499009650
 
 exports.conf = {
   enabled: true,
-  oderaOnly: false,
+  oderaOnly: true,
   aliases: [],
   permLevel: "Staff"
 };
