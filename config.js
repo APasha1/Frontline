@@ -44,11 +44,9 @@ var config = {
 
 
   products: {
-    autoranking: {name: "Odera - Autoranking", link: "https://odera.fede.center/Autoranking.rbxl" },
-    admin: {name: "Odera - Admin Basics", link: ""},
-    busstop: {name: "Odera - Bus Stop System", link: "https://odera.fede.center/OD_Busstop.rbxm"},
-    sidemenu: {name: "Odera - Side Menu", link: "https://odera.fede.center/SideGUI.rbxl"},
-    hostingassistant: {name: "Odera - Hosting Assistant", link: ""}
+    easierNameHere: {name: "Full Name", link: "https://download.com/link" },
+    admin: {name: "Odera - Admin Basics", link: "https://odera.fede.center/Admin.rbxl"},
+
   },
   
   
