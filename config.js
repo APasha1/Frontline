@@ -41,20 +41,8 @@ var config = {
   ownerId: "269256731672969216",
   
   // productName: id
-  products_Asilllian: { // -- Cancel this when possible
-  scpbundle: {name: "Asilllian - SCP Bundle"}, 
-  playerslistleaderboard: {name: "Asilllian - Players List Leaderboard"},
-  ranktagv2: {name: "Asilllian - Rank Tag V2"},
-  simplemenugui: {name: "Asilllian - Simple Menu GUI"},
-  shopgui: {name: "Asilllian - Shop GUI"},
-  announcementssystem: {name: "Asilllian - Announcements System"},
-  ranktagv1: {name: "Asilllian - Rank Tag V1"}
-  },
-  
-  products_ghostly: {
-    productnamehere: { name: "producthere" },
-  },
-    
+
+
   products: {
     autoranking: {name: "Odera - Autoranking", link: "https://odera.fede.center/Autoranking.rbxl" },
     admin: {name: "Odera - Admin Basics", link: ""},
